@@ -1,0 +1,47 @@
+---
+interface Props {
+  title?: string;
+  suitable: string[];
+  notSuitable: string[];
+}
+
+const { title = 'Para quién es y para quién no', suitable, notSuitable } = Astro.props;
+---
+
+<section id="para-quien" class="bg-[#f3f7f0] py-16 md:py-20">
+  <div class="container">
+    <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+      {title}
+    </h2>
+    <div class="mt-8 grid gap-6 md:grid-cols-2">
+      <div class="rounded-2xl bg-white p-6 shadow-[0_12px_30px_rgba(17,23,20,0.06)] ring-1 ring-black/5">
+        <h3 class="flex items-center gap-2 text-lg font-bold text-[#376A21]">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Ideal para
+        </h3>
+        <ul class="mt-4 space-y-3">
+          {suitable.map((item) => (
+            <li class="flex items-start gap-2.5 text-sm leading-6 text-[#24312b]">
+              <span class="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#7ECF4D]"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div class="rounded-2xl bg-white p-6 shadow-[0_12px_30px_rgba(17,23,20,0.06)] ring-1 ring-black/5">
+        <h3 class="flex items-center gap-2 text-lg font-bold text-[#617069]">
+          <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          No es la mejor opción si
+        </h3>
+        <ul class="mt-4 space-y-3">
+          {notSuitable.map((item) => (
+            <li class="flex items-start gap-2.5 text-sm leading-6 text-[#617069]">
+              <span class="mt-1.5 h-2 w-2 flex-shrink-0 rounded-full bg-[#617069]/40"></span>
+              {item}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>

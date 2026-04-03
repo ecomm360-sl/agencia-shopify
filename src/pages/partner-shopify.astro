@@ -1,0 +1,132 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import HeroLight from '../components/sections/HeroLight.astro';
+import ShortAnswer from '../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../components/aeo/ForWhomTable.astro';
+import Methodology from '../components/aeo/Methodology.astro';
+import FAQAccordion from '../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../components/sections/ContactBlock.astro';
+import { organization } from '../data/structured-data';
+
+const breadcrumbs = [{ label: 'Partner Shopify' }];
+
+const faqs = [
+  { question: '¿Qué es un Shopify Partner?', answer: 'Un Shopify Partner es una agencia o profesional que forma parte del programa oficial de partners de Shopify. Esto significa que tiene acceso a herramientas, formación y soporte exclusivos de Shopify, y que ha demostrado capacidad para implementar, diseñar y hacer crecer tiendas en la plataforma. Hay distintos niveles: Partner, Plus Partner y Premier Partner, según volumen y calidad de los proyectos.' },
+  { question: '¿Por qué contratar un Shopify Partner en lugar de una agencia generalista?', answer: 'Un Shopify Partner conoce la plataforma en profundidad: sus limitaciones, sus fortalezas, las mejores prácticas de desarrollo Liquid, las particularidades del checkout, las opciones de personalización y el ecosistema de apps. Una agencia generalista puede crear una tienda visualmente correcta, pero difícilmente optimizará el rendimiento, la conversión y la operativa como un partner que trabaja en Shopify a diario.' },
+  { question: '¿Cuántos Shopify Partners hay en España?', answer: 'Según el directorio oficial de Shopify, hay aproximadamente 88 agencias registradas como partners en España. De ellas, 5 son Premier Partners y 31 son Plus Partners. Esto indica un mercado competitivo donde la diferenciación viene de la especialización, no solo de la certificación.' },
+  { question: '¿eComm360 es Shopify Partner?', answer: 'Sí. eComm360 es Shopify Partner en España con especialización en proyectos de complejidad técnica: migraciones de plataforma, integraciones ERP, operaciones B2B y tiendas Shopify Plus. Nuestro perfil es más técnico y consultivo que creativo, orientado a empresas que necesitan un partner que entienda tanto la plataforma como la operativa de negocio.' },
+  { question: '¿Qué garantías ofrece trabajar con un Shopify Partner?', answer: 'Trabajar con un Shopify Partner certificado garantiza que la agencia conoce las buenas prácticas de Shopify, tiene acceso a soporte técnico prioritario de Shopify, puede crear entornos de desarrollo dedicados, y está actualizada con las últimas funcionalidades de la plataforma. Además, los proyectos desarrollados por partners suelen tener mejor rendimiento, mejor SEO y menos problemas técnicos a largo plazo.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Partner Shopify en España - eComm360',
+  provider: organization,
+  description: 'eComm360 es Shopify Partner en España, especializado en implementaciones técnicas, migraciones, integraciones ERP y operaciones B2B sobre Shopify y Shopify Plus.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'Shopify Partner Agency',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Partner Shopify en España — eComm360"
+  description="eComm360 es Shopify Partner en España. Especialistas en implementaciones técnicas, migraciones, integraciones ERP y Shopify Plus. Enfoque consultivo y operativo."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Partner Shopify en España"
+    title="Un partner Shopify técnico, consultivo y orientado a operaciones complejas."
+    subtitle="eComm360 es Shopify Partner en España con especialización en migraciones, integraciones ERP, operaciones B2B y Shopify Plus. No somos una agencia creativa generalista: somos un socio técnico que entiende tu negocio."
+    ctaPrimary={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Un Shopify Partner es una agencia certificada por Shopify con acceso a herramientas, formación y soporte exclusivos. eComm360 es Shopify Partner en España con un perfil técnico y consultivo: nos especializamos en migraciones desde otras plataformas, integraciones con ERP y CRM, operaciones B2B sobre Shopify Plus, y proyectos donde la complejidad técnica requiere un socio que entienda tanto la plataforma como la operativa del negocio."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué nos diferencia como Shopify Partner
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            En España hay 88 agencias registradas como Shopify Partners. La mayoría ofrece diseño y desarrollo estándar. <strong class="text-[#111714]">Nuestro perfil es diferente</strong>: nos especializamos en la intersección entre Shopify y la complejidad operativa.
+          </p>
+          <p>
+            Eso significa que nuestros proyectos típicos incluyen <a href="/migracion-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">migraciones</a> desde Magento o PrestaShop, <a href="/integracion-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">integraciones</a> con ERPs como SAP o Dynamics, operaciones <a href="/soluciones/shopify-b2b/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">B2B</a> con catálogos privados y precios segmentados, y implementaciones <a href="/shopify/plus/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Shopify Plus</a> para empresas que necesitan escalar.
+          </p>
+          <p>
+            No buscamos volumen de proyectos. Buscamos proyectos donde nuestra experiencia técnica marque la diferencia entre una implementación que funciona y una que transforma la operación del negocio.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Empresas que necesitan un partner con capacidad técnica para integraciones complejas.',
+      'Negocios que migran desde Magento, PrestaShop u otras plataformas y necesitan un proceso controlado.',
+      'Operaciones B2B que requieren catálogos privados, precios segmentados e integración con ERP.',
+      'Empresas que evalúan Shopify Plus y necesitan asesoramiento sobre si es la plataforma adecuada.',
+      'Marcas que buscan un socio a largo plazo, no una agencia que entrega y desaparece.',
+    ]}
+    notSuitable={[
+      'Negocios que solo necesitan un template instalado y configurado.',
+      'Proyectos donde el presupuesto total no permite un enfoque profesional.',
+      'Empresas que buscan una agencia de branding o marketing genérica.',
+    ]}
+  />
+
+  <section class="bg-[#f3f7f0] py-16 md:py-20">
+    <div class="container">
+      <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+        Nuestras áreas de especialización
+      </h2>
+      <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+        {[
+          { title: 'Shopify & Shopify Plus', text: 'Diseño, desarrollo y optimización de tiendas Shopify con enfoque en rendimiento y conversión.', href: '/shopify/' },
+          { title: 'Migraciones', text: 'Transferencia de datos, preservación SEO e integraciones desde Magento, PrestaShop y LogiCommerce.', href: '/migracion-shopify/' },
+          { title: 'Integraciones', text: 'Conexión con ERP, CRM, PIM y WMS para automatizar operaciones y eliminar doble entrada de datos.', href: '/integracion-shopify/' },
+          { title: 'Marketing y Growth', text: 'CRO, SEO, email marketing y performance sobre Shopify. Crecimiento medido y orientado a ventas.', href: '/marketing-shopify/' },
+        ].map((area) => (
+          <a href={area.href} class="group rounded-2xl bg-white p-6 shadow-[0_12px_30px_rgba(17,23,20,0.06)] ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(17,23,20,0.1)]">
+            <h3 class="text-lg font-bold tracking-[-0.03em] text-[#111714] group-hover:text-[#376A21]">{area.title}</h3>
+            <p class="mt-2 text-sm leading-6 text-[#617069]">{area.text}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <Methodology
+    title="Cómo trabajamos"
+    subtitle="Un enfoque consultivo que empieza por entender tu negocio, no por abrir Figma."
+    steps={[
+      { step: '01', title: 'Diagnóstico', text: 'Entendemos tu operativa, catálogo, sistemas actuales, objetivos y restricciones antes de proponer nada.' },
+      { step: '02', title: 'Propuesta técnica', text: 'Diseñamos una solución a medida con arquitectura definida, plazos realistas y alcance claro.' },
+      { step: '03', title: 'Implementación', text: 'Desarrollamos con sprints, entregables visibles y comunicación constante. Sin sorpresas.' },
+      { step: '04', title: 'Soporte y evolución', text: 'No desaparecemos después del lanzamiento. Acompañamos la operación y optimizamos continuamente.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Buscas un Shopify Partner que entienda tu operación?"
+    subtitle="Cuéntanos tu proyecto. Te daremos una valoración honesta de si somos el partner adecuado para ti."
+    ctaPrimary={{ label: 'Contactar', href: '#contacto' }}
+  />
+</LandingLayout>

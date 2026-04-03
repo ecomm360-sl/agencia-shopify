@@ -1,0 +1,38 @@
+---
+interface Props {
+  badge: string;
+  title: string;
+  subtitle: string;
+  ctaPrimary?: { label: string; href: string };
+}
+
+const { badge, title, subtitle, ctaPrimary } = Astro.props;
+---
+
+<section class="bg-[#f3f7f0] pb-16 pt-8 md:pb-20">
+  <div class="container">
+    <div class="max-w-3xl">
+      <div class="inline-flex items-center gap-2 rounded-full border border-[#d7e5d3] bg-white/80 px-4 py-2 text-sm text-[#376A21] shadow-sm">
+        <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+        {badge}
+      </div>
+
+      <h1 class="mt-6 text-balance text-4xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-5xl lg:text-6xl">
+        {title}
+      </h1>
+
+      <p class="mt-6 max-w-2xl text-lg leading-8 text-[#617069]">
+        {subtitle}
+      </p>
+
+      {ctaPrimary && (
+        <div class="mt-8">
+          <a href={ctaPrimary.href} class="group inline-flex items-center rounded-full bg-[#7ECF4D] px-7 py-3.5 text-base font-semibold text-[#08110D] shadow-[0_16px_40px_rgba(126,207,77,0.34)] transition hover:bg-[#95D66A]">
+            {ctaPrimary.label}
+            <svg class="ml-2 h-4 w-4 transition group-hover:translate-x-1" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+          </a>
+        </div>
+      )}
+    </div>
+  </div>
+</section>

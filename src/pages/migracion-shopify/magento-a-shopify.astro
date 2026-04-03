@@ -1,0 +1,129 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import ComparisonTable from '../../components/aeo/ComparisonTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [
+  { label: 'Migración a Shopify', href: '/migracion-shopify/' },
+  { label: 'Magento a Shopify' },
+];
+
+const faqs = [
+  { question: '¿Cuánto tarda migrar de Magento a Shopify?', answer: 'Una migración de Magento a Shopify suele tardar entre 12 y 20 semanas, más que otras migraciones porque Magento tiene una arquitectura de datos más compleja: atributos configurables, multi-store, reglas de precios complejas, EAV (Entity-Attribute-Value) y múltiples tipos de producto. La preservación SEO de sitios Magento también requiere más trabajo.' },
+  { question: '¿Se pierde el SEO al migrar de Magento a Shopify?', answer: 'No, si se planifica correctamente. Magento suele tener un SEO bien establecido con URLs limpias, metadatos trabajados y autoridad de dominio acumulada. La migración debe incluir un mapa exhaustivo de redirecciones 301, preservación de metadatos, transferencia de contenido y monitorización post-migración. Con un plan adecuado, el impacto SEO es temporal.' },
+  { question: '¿Shopify puede replicar toda la funcionalidad de Magento?', answer: 'La gran mayoría sí. Shopify cubre catálogos complejos, multi-moneda, multi-idioma, B2B (con Plus), checkout personalizable y un ecosistema de apps muy amplio. Algunas funcionalidades muy específicas de Magento (como ciertos tipos de productos configurables o reglas de precios muy complejas) pueden requerir adaptación o desarrollo custom, pero son casos excepcionales.' },
+  { question: '¿Cuánto cuesta migrar de Magento a Shopify?', answer: 'Las migraciones desde Magento son las más complejas y costosas: parten de 20.000-30.000 € para tiendas medianas y pueden superar los 60.000-100.000 € para instalaciones Magento Enterprise con múltiples stores, integraciones ERP complejas y grandes volúmenes de datos. El coste refleja la complejidad técnica de la arquitectura de Magento.' },
+  { question: '¿Merece la pena migrar de Magento 2 a Shopify?', answer: 'Depende de tu situación. Si tu equipo dedica más tiempo a mantener Magento que a hacer crecer el negocio, si los costes de hosting e infraestructura son altos, o si necesitas funcionalidades como B2B nativo que en Magento requieren extensiones caras, la migración a Shopify suele tener un ROI positivo en 12-18 meses por ahorro en TCO (coste total de propiedad).' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Migración de Magento a Shopify',
+  provider: organization,
+  description: 'Migración profesional de Magento (1 y 2) a Shopify: catálogo complejo, multi-store, integraciones ERP, preservación SEO y reducción de TCO.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'eCommerce Platform Migration',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Migrar de Magento a Shopify — Proceso, Plazos y Costes"
+  description="Migramos tu tienda de Magento (1 y 2) a Shopify. Catálogos complejos, integraciones ERP, preservación SEO. Agencia especializada en migraciones Magento a Shopify."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Magento a Shopify"
+    title="Migra de Magento a Shopify y libérate de la deuda técnica."
+    subtitle="Transferimos catálogos complejos, clientes, pedidos e integraciones desde Magento a Shopify con un proceso que prioriza la preservación SEO y la continuidad operativa."
+    ctaPrimary={{ label: 'Consultar migración desde Magento', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Migrar de Magento a Shopify permite a las empresas reducir drásticamente el coste total de propiedad (TCO) de su eCommerce: elimina costes de hosting, infraestructura, actualizaciones de seguridad y mantenimiento técnico continuado. eComm360 gestiona estas migraciones con especial atención a la arquitectura de datos compleja de Magento (EAV, multi-store, productos configurables), la preservación del SEO acumulado y la integración con los sistemas empresariales existentes."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Por qué las empresas dejan Magento
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Magento es una plataforma potente, pero <strong class="text-[#111714]">el coste de mantenerla funcionando es cada vez más alto</strong>. Hosting dedicado, actualizaciones de seguridad, parches, extensiones que dejan de mantenerse, y un equipo técnico especializado que se necesita solo para que la tienda siga en pie.
+          </p>
+          <p>
+            Shopify elimina toda esa carga: hosting gestionado, actualizaciones automáticas, seguridad incluida, y un ecosistema de apps que sustituye a la mayoría de extensiones de Magento. Con <a href="/shopify/plus/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Shopify Plus</a>, además, se cubren necesidades enterprise como <a href="/soluciones/shopify-b2b/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">B2B nativo</a>, multi-store y checkout personalizable.
+          </p>
+          <p>
+            La migración es compleja, sí. Pero el retorno suele ser claro: <strong class="text-[#111714]">menos coste operativo, más velocidad de evolución y un equipo que puede centrarse en vender</strong> en lugar de en mantener la infraestructura.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Empresas en Magento 1 con fin de soporte que necesitan migrar urgentemente.',
+      'Tiendas Magento 2 con costes de hosting e infraestructura que crecen cada año.',
+      'Negocios donde el equipo técnico dedica más tiempo a mantenimiento que a innovación.',
+      'Empresas que necesitan B2B nativo y en Magento requieren extensiones caras y complejas.',
+      'Negocios que quieren reducir el TCO de su eCommerce de forma significativa.',
+    ]}
+    notSuitable={[
+      'Empresas con Magento funcionando bien, sin problemas de coste ni escalabilidad.',
+      'Negocios con personalizaciones extremas de Magento que no tienen equivalente en Shopify.',
+      'Tiendas con requisitos regulatorios que solo Magento puede cubrir por su modelo self-hosted.',
+    ]}
+  />
+
+  <ComparisonTable
+    title="Magento vs Shopify"
+    thisLabel="Shopify / Shopify Plus"
+    otherLabel="Magento"
+    items={[
+      { label: 'Hosting', thisOption: 'Incluido, CDN global, SSL', otherOption: 'Propio: servidores, CDN, SSL, monitorización' },
+      { label: 'Actualizaciones', thisOption: 'Automáticas, sin riesgo', otherOption: 'Manuales, pueden romper extensiones' },
+      { label: 'Seguridad', thisOption: 'Gestionada por Shopify, PCI Level 1', otherOption: 'Responsabilidad del merchant, parches frecuentes' },
+      { label: 'TCO anual (estimado)', thisOption: '20.000-50.000 € (plataforma + apps)', otherOption: '40.000-120.000 € (hosting + dev + mantenimiento)' },
+      { label: 'B2B', thisOption: 'Nativo en Plus', otherOption: 'Extensiones de terceros, costosas' },
+      { label: 'Velocidad de evolución', thisOption: 'Shopify lanza funcionalidades continuamente', otherOption: 'Cada cambio requiere desarrollo y testing' },
+    ]}
+  />
+
+  <Methodology
+    title="Cómo migramos desde Magento"
+    steps={[
+      { step: '01', title: 'Auditoría Magento', text: 'Analizamos la instalación: versión, extensiones, arquitectura de datos (EAV), integraciones, multi-store y estructura SEO.' },
+      { step: '02', title: 'Arquitectura de migración', text: 'Diseñamos el mapeo de datos (productos configurables, atributos, categorías), el plan de redirecciones SEO y la estrategia de integraciones.' },
+      { step: '03', title: 'Migración incremental', text: 'Migramos datos por fases: primero catálogo y clientes, después pedidos e historial. Validación automatizada en cada fase.' },
+      { step: '04', title: 'Desarrollo y testing', text: 'Implementamos la nueva tienda, configuramos integraciones y hacemos testing exhaustivo de datos y flujos.' },
+      { step: '05', title: 'Go-live controlado', text: 'Lanzamiento con switch de DNS, activación de redirecciones, monitorización activa y soporte intensivo las primeras semanas.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Estás considerando dejar Magento?"
+    subtitle="Analizamos tu instalación Magento y te damos una estimación realista de plazos, costes y beneficios de la migración a Shopify."
+    ctaPrimary={{ label: 'Consultar migración desde Magento', href: '#contacto' }}
+  />
+</LandingLayout>

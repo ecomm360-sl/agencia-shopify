@@ -1,0 +1,17 @@
+node_modules
+dist
+.git
+.claude
+client
+server
+shared
+patches
+*.md
+!README.md
+ideas.md
+todo.md
+.prettierrc
+.prettierignore
+vite.config.ts
+tsconfig.node.json
+components.json

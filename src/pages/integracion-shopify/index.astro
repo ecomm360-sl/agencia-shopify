@@ -1,0 +1,110 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [{ label: 'Integración Shopify' }];
+
+const faqs = [
+  { question: '¿Qué sistemas se pueden integrar con Shopify?', answer: 'Shopify se integra con ERPs (SAP, Microsoft Dynamics, Sage, A3, Holded), CRMs (HubSpot, Salesforce), PIMs (Akeneo, Salsify), WMS (gestión de almacén), plataformas de email marketing (Klaviyo, Mailchimp), marketplaces (Amazon, eBay), pasarelas de pago y herramientas de automatización como Zapier o Make. Las integraciones pueden ser mediante apps nativas, APIs o middleware personalizado.' },
+  { question: '¿Cómo funciona la integración de un ERP con Shopify?', answer: 'La integración ERP-Shopify sincroniza datos de catálogo (productos, precios, stock), clientes, pedidos y facturación entre ambos sistemas. Puede ser bidireccional y en tiempo real o por lotes programados. Normalmente se usa un middleware o conector que gestiona las reglas de transformación y mapeo de datos entre el modelo de datos del ERP y el de Shopify.' },
+  { question: '¿Cuánto tarda implementar una integración con Shopify?', answer: 'Depende de la complejidad. Una integración con un ERP mediante un conector estándar puede tardar 4-8 semanas. Una integración personalizada con múltiples sistemas (ERP + CRM + PIM) puede requerir 8-16 semanas. El factor principal es la complejidad de las reglas de negocio y el estado de los datos en los sistemas origen.' },
+  { question: '¿Las integraciones afectan al rendimiento de la tienda Shopify?', answer: 'No, si están bien implementadas. Las integraciones con Shopify operan a nivel de API y backend, no afectan a la experiencia del usuario en la tienda. Es importante que la sincronización de datos esté optimizada para evitar sobrecargas y que existan mecanismos de gestión de errores y reintentos.' },
+  { question: '¿Necesito Shopify Plus para integrar mi ERP?', answer: 'No necesariamente. Shopify estándar permite integraciones vía API. Sin embargo, Shopify Plus ofrece ventajas significativas para integraciones complejas: acceso a APIs adicionales, mayor cuota de llamadas API, Shopify Flow para automatización avanzada, y funcionalidades B2B nativas que suelen requerir integración con ERP.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Integración Shopify',
+  provider: organization,
+  description: 'Servicios de integración de Shopify con ERP, CRM, PIM, WMS y otros sistemas empresariales. Conectividad, automatización y sincronización de datos.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'eCommerce Integration Services',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Integración Shopify — Conectividad con ERP, CRM y Automatización"
+  description="Integramos Shopify con ERP, CRM, PIM y WMS. Sincronización de catálogo, stock, pedidos y clientes. Agencia especializada en integraciones Shopify en España."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Integración Shopify"
+    title="Conectamos Shopify con tu ERP, CRM y toda tu infraestructura de negocio."
+    subtitle="Diseñamos e implementamos integraciones que sincronizan catálogo, stock, pedidos, clientes y facturación entre Shopify y tus sistemas empresariales."
+    ctaPrimary={{ label: 'Consultar integración', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="La integración de Shopify con sistemas empresariales como ERP, CRM o PIM permite automatizar la sincronización de catálogo, stock, pedidos y clientes, eliminando la doble entrada de datos y reduciendo errores operativos. eComm360 diseña arquitecturas de integración que conectan Shopify con la infraestructura existente del negocio, usando APIs nativas, middleware o conectores personalizados según la complejidad requerida."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué significa integrar Shopify con tu negocio
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Shopify es la capa de venta. Pero tu negocio tiene un <strong class="text-[#111714]">ERP que gestiona el stock</strong>, un CRM que registra los clientes, un PIM que organiza el catálogo y un WMS que controla el almacén. La integración es lo que hace que todos estos sistemas trabajen como uno solo.
+          </p>
+          <p>
+            Sin integración, alguien tiene que introducir manualmente los pedidos en el ERP, actualizar el stock a mano y duplicar información de productos entre sistemas. Eso no escala. Y genera errores que cuestan dinero.
+          </p>
+          <p>
+            Trabajamos especialmente con la <a href="/integracion-shopify/erp-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">integración ERP-Shopify</a>, que es el eje central de la mayoría de operaciones eCommerce serias. También con integraciones de CRM, PIM, marketplaces y herramientas de automatización.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Empresas con ERP que necesitan sincronizar catálogo, stock y pedidos con Shopify.',
+      'Negocios B2B que gestionan precios, clientes y condiciones desde un sistema externo.',
+      'Operaciones con múltiples canales (tienda online, marketplaces, puntos de venta físicos).',
+      'Empresas con PIM que necesitan centralizar la gestión del catálogo.',
+      'Negocios que quieren automatizar la gestión de pedidos, facturación y logística.',
+    ]}
+    notSuitable={[
+      'Tiendas pequeñas que gestionan todo desde el panel de Shopify sin sistemas externos.',
+      'Negocios sin ERP ni CRM que todavía no necesitan automatización de datos.',
+      'Proyectos donde la integración cuesta más que el problema operativo que resuelve.',
+    ]}
+  />
+
+  <Methodology
+    title="Cómo diseñamos una integración Shopify"
+    steps={[
+      { step: '01', title: 'Mapeo de sistemas', text: 'Identificamos todos los sistemas que necesitan comunicarse con Shopify: ERP, CRM, PIM, WMS, marketplaces, pasarelas de pago y herramientas de automatización.' },
+      { step: '02', title: 'Diseño de arquitectura', text: 'Definimos los flujos de datos, la dirección de sincronización, las reglas de transformación y la estrategia de gestión de errores.' },
+      { step: '03', title: 'Implementación', text: 'Desarrollamos la integración usando APIs de Shopify, middleware cuando es necesario, y conectores específicos para cada sistema.' },
+      { step: '04', title: 'Testing y puesta en marcha', text: 'Validamos cada flujo de datos con escenarios reales, monitorizamos la sincronización y ajustamos las reglas hasta que la operación sea estable.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Necesitas conectar Shopify con tus sistemas?"
+    subtitle="Analizamos tu infraestructura y diseñamos una integración que elimine la fricción operativa entre Shopify y tu negocio."
+    ctaPrimary={{ label: 'Consultar integración', href: '#contacto' }}
+  />
+</LandingLayout>

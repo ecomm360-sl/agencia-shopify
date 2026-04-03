@@ -1,0 +1,35 @@
+---
+interface Step {
+  step: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  title?: string;
+  subtitle?: string;
+  steps: Step[];
+}
+
+const { title = 'Metodología', subtitle, steps } = Astro.props;
+---
+
+<section id="metodologia" class="bg-[#f3f7f0] py-16 md:py-20">
+  <div class="container">
+    <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+      {title}
+    </h2>
+    {subtitle && (
+      <p class="mt-4 max-w-2xl text-lg leading-8 text-[#617069]">{subtitle}</p>
+    )}
+    <div class="mt-8 grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+      {steps.map((item) => (
+        <article class="rounded-[2rem] bg-white p-7 shadow-[0_16px_50px_rgba(17,23,20,0.05)] ring-1 ring-black/5">
+          <div class="text-sm font-semibold tracking-[0.24em] text-[#5da533]">{item.step}</div>
+          <h3 class="mt-4 text-xl font-bold tracking-[-0.04em] text-[#111714]">{item.title}</h3>
+          <p class="mt-3 text-sm leading-7 text-[#617069]">{item.text}</p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

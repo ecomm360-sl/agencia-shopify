@@ -1,0 +1,113 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [
+  { label: 'Integración Shopify', href: '/integracion-shopify/' },
+  { label: 'ERP Shopify' },
+];
+
+const faqs = [
+  { question: '¿Qué datos se sincronizan entre un ERP y Shopify?', answer: 'Los datos principales son: catálogo de productos (con variantes, precios e imágenes), niveles de stock, clientes (con datos fiscales y comerciales), pedidos (incluyendo estados de procesamiento y envío), facturación, tarifas y condiciones de pago. La sincronización puede ser bidireccional y en tiempo real o por lotes programados.' },
+  { question: '¿Con qué ERPs se puede integrar Shopify?', answer: 'Shopify se integra con la mayoría de ERPs del mercado: SAP Business One y S/4HANA, Microsoft Dynamics 365 y Business Central, Sage (200, X3), A3 ERP, Holded, Odoo, NetSuite y muchos otros. La integración se realiza mediante APIs, middleware o conectores específicos según el ERP.' },
+  { question: '¿Cuánto tarda la integración de un ERP con Shopify?', answer: 'Una integración estándar con un conector preconfigurado puede tardar 4-8 semanas. Una integración personalizada con reglas de negocio complejas (precios segmentados B2B, múltiples almacenes, facturación automática) puede requerir 8-16 semanas. El factor principal es la complejidad de las reglas de transformación de datos.' },
+  { question: '¿Necesito un middleware para integrar mi ERP con Shopify?', answer: 'No siempre, pero es recomendable para integraciones complejas. Un middleware (como Celigo, Boomi o soluciones custom) actúa como capa intermedia que gestiona la transformación de datos, la gestión de errores, los reintentos y la monitorización. Para integraciones simples, una conexión directa vía API puede ser suficiente.' },
+  { question: '¿La integración ERP afecta al rendimiento de mi tienda Shopify?', answer: 'No. Las integraciones ERP operan a nivel de API y backend, completamente separadas de la experiencia del usuario en la tienda. La sincronización de datos ocurre en segundo plano y no afecta a la velocidad de carga ni al checkout de la tienda.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Integración ERP con Shopify',
+  provider: organization,
+  description: 'Integración de Shopify con ERPs como SAP, Dynamics, Sage y otros. Sincronización de catálogo, stock, pedidos, facturación y clientes.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'ERP Integration Services',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Integración ERP con Shopify — Catálogo, Stock, Pedidos y Facturación"
+  description="Integramos tu ERP (SAP, Dynamics, Sage, Holded) con Shopify. Sincronización de catálogo, stock, pedidos y facturación. Agencia especializada en España."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="ERP + Shopify"
+    title="Sincronizamos tu ERP con Shopify para que la operación fluya sin fricción."
+    subtitle="Catálogo, stock, precios, pedidos, facturación y clientes sincronizados entre tu ERP y Shopify de forma automática. Sin doble entrada de datos, sin errores manuales."
+    ctaPrimary={{ label: 'Consultar integración ERP', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="La integración ERP-Shopify conecta la tienda online con el sistema de gestión empresarial para sincronizar automáticamente catálogos de productos, niveles de stock, precios, pedidos, facturación y datos de clientes. Esto elimina la doble entrada de datos, reduce errores operativos y permite escalar la operación eCommerce sin multiplicar el trabajo administrativo. eComm360 integra Shopify con ERPs como SAP, Dynamics, Sage, A3 y Holded."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Por qué integrar tu ERP con Shopify
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Sin integración, cada pedido que entra por Shopify hay que introducirlo manualmente en el ERP. Cada cambio de precio o stock hay que replicarlo a mano. <strong class="text-[#111714]">Eso no escala</strong>. Y cada dato introducido a mano es un error potencial.
+          </p>
+          <p>
+            La integración ERP-Shopify automatiza estos flujos para que la tienda y el ERP trabajen como un sistema unificado. Es especialmente crítica en operaciones <a href="/soluciones/shopify-b2b/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">B2B</a> donde los catálogos son grandes, los precios son segmentados y la facturación tiene reglas complejas.
+          </p>
+          <p>
+            En operaciones sobre <a href="/shopify/plus/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Shopify Plus</a>, la integración ERP es prácticamente obligatoria para aprovechar las funcionalidades B2B nativas de la plataforma.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Empresas con ERP que gestionan catálogos de más de 500 productos en Shopify.',
+      'Negocios B2B que necesitan sincronizar precios segmentados y condiciones comerciales.',
+      'Operaciones con múltiples canales de venta (online + offline + marketplaces).',
+      'Empresas que dedican horas semanales a introducir manualmente pedidos o actualizar stock.',
+      'Negocios que necesitan facturación automática desde Shopify al ERP.',
+    ]}
+    notSuitable={[
+      'Tiendas con menos de 50 productos y volumen bajo de pedidos.',
+      'Negocios sin ERP que gestionan todo desde Shopify.',
+      'Empresas donde el coste de la integración supera el ahorro operativo que genera.',
+    ]}
+  />
+
+  <Methodology
+    title="Cómo integramos tu ERP con Shopify"
+    steps={[
+      { step: '01', title: 'Auditoría de sistemas', text: 'Analizamos tu ERP, su versión, APIs disponibles, estructura de datos y reglas de negocio que afectan a la sincronización.' },
+      { step: '02', title: 'Diseño de flujos', text: 'Definimos qué datos se sincronizan, en qué dirección, con qué frecuencia y qué reglas de transformación aplican.' },
+      { step: '03', title: 'Desarrollo', text: 'Implementamos la integración usando conectores estándar o desarrollo custom según la complejidad del ERP.' },
+      { step: '04', title: 'Validación y go-live', text: 'Testamos cada flujo con datos reales, monitorizamos la sincronización y ajustamos hasta que la operación sea estable.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Necesitas conectar tu ERP con Shopify?"
+    subtitle="Analizamos tu ERP y tus necesidades de sincronización para proponerte la solución de integración más adecuada."
+    ctaPrimary={{ label: 'Consultar integración ERP', href: '#contacto' }}
+  />
+</LandingLayout>

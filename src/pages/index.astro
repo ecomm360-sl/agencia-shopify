@@ -1,0 +1,124 @@
+---
+import HomeLayout from '../layouts/HomeLayout.astro';
+import HeroDark from '../components/sections/HeroDark.astro';
+import TrustBanner from '../components/sections/TrustBanner.astro';
+import ServiceCards from '../components/sections/ServiceCards.astro';
+import FeatureGrid from '../components/sections/FeatureGrid.astro';
+import ProcessSteps from '../components/sections/ProcessSteps.astro';
+import ImageTextSplit from '../components/sections/ImageTextSplit.astro';
+import ContactBlock from '../components/sections/ContactBlock.astro';
+import { organization, localBusiness, website } from '../data/structured-data';
+
+const heroImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663029235023/WaDSDERYgyrciiNP9nwSFK/agencia-shopify-hero-dark-commerce-9SzChkfKgqSmNrCY3f9EKi.webp';
+const abstractImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663029235023/WaDSDERYgyrciiNP9nwSFK/agencia-shopify-abstract-growth-VsaAhSxy2j4bovCREU6RS9.webp';
+const collageImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663029235023/WaDSDERYgyrciiNP9nwSFK/agencia-shopify-ui-collage-mzAnEbfCbFBYBhnLmmGxsc.webp';
+---
+
+<HomeLayout
+  title="Agencia Shopify en España — Diseño, Migración y Crecimiento eCommerce"
+  description="Agencia Shopify especializada en diseño premium, migraciones, B2B, integraciones ERP y crecimiento para eCommerce. Partner tecnológico en España."
+  jsonLd={[organization, localBusiness, website]}
+>
+  <HeroDark
+    badge="Especialistas en diseño, migración y crecimiento en Shopify"
+    title="Una imagen y una web con"
+    titleAccent="alma Shopify"
+    titleAfter="pero hechas para vender tu propuesta."
+    subtitle="Diseñamos experiencias que recogen la claridad, el pulso visual y la ambición de Shopify, reinterpretadas para una agencia que quiere transmitir especialización, criterio y negocio."
+    ctaPrimary={{ label: 'Solicitar propuesta', href: '#contacto' }}
+    ctaSecondary={{ label: 'Ver servicios Shopify', href: '/shopify/' }}
+    metrics={[
+      { value: 'Shopify-first', label: 'Especialización real en el ecosistema' },
+      { value: 'B2B + DTC', label: 'Capacidad para modelos híbridos y complejos' },
+      { value: 'UX + Growth', label: 'Diseño orientado a negocio y conversión' },
+    ]}
+    image={{ src: heroImage, alt: 'Visual premium de comercio digital inspirado en Shopify' }}
+  />
+
+  <TrustBanner
+    text="Shopify look & feel · Diseño premium · Conversión · Arquitectura clara"
+    tags={['Brand systems', 'Shopify stores', 'B2B experience', 'Growth design']}
+  />
+
+  <ServiceCards
+    badge="Servicios"
+    title="Una web corporativa que se siente dentro del universo Shopify."
+    subtitle="No se trata solo de parecer moderna. Se trata de construir una presencia visual que explique especialización, método y capacidad real para llevar marcas a Shopify con criterio."
+    pillars={[
+      'Arquitectura clara para tiendas que quieren escalar.',
+      'Diseño premium que transmite confianza desde el primer scroll.',
+      'Implementación con criterio comercial, no solo estético.',
+      'Una experiencia muy Shopify, reinterpretada para tu marca.',
+    ]}
+    services={[
+      {
+        icon: 'store',
+        title: 'Diseño y desarrollo Shopify',
+        text: 'Tiendas con enfoque en conversión, rendimiento y coherencia de marca, desde la arquitectura hasta el detalle visual.',
+        href: '/shopify/',
+      },
+      {
+        icon: 'workflow',
+        title: 'Migraciones y replatforming',
+        text: 'Llevamos catálogos, contenido y operativa a Shopify con una transición ordenada, clara y orientada a negocio.',
+        href: '/migracion-shopify/',
+      },
+      {
+        icon: 'layout',
+        title: 'Shopify B2B y experiencias avanzadas',
+        text: 'Construimos flujos para ventas profesionales, catálogos complejos, pricing segmentado y procesos más sólidos.',
+        href: '/soluciones/shopify-b2b/',
+      },
+      {
+        icon: 'rocket',
+        title: 'Growth y optimización continua',
+        text: 'Analizamos puntos de fricción, afinamos el funnel y mejoramos la experiencia para crecer con menos ruido y más foco.',
+        href: '/marketing-shopify/',
+      },
+    ]}
+  />
+
+  <FeatureGrid
+    badge="Dirección visual"
+    title="Oscuridad premium para el impacto. Superficies claras para explicar el sistema."
+    subtitle="La propuesta combina dos registros complementarios: un primer golpe visual oscuro, ambicioso y muy contemporáneo; después, una capa más clara, precisa y modular para explicar servicios, proceso y valor."
+    features={[
+      'Titulares grandes y compactos para ganar atención rápido.',
+      'Verde usado como señal de marca y no como decoración masiva.',
+      'Bloques amplios con aire, ritmo editorial y contraste limpio.',
+      'UI, B2B y growth integrados en un mismo lenguaje visual.',
+    ]}
+    image={{ src: abstractImage, alt: 'Composición visual clara y tecnológica con acentos verdes' }}
+  />
+
+  <ProcessSteps
+    badge="Método"
+    title="Un proceso claro para que la web no solo se vea bien, sino que explique mejor tu valor."
+    subtitle="La identidad y la web deben nacer del negocio. Por eso la estructura combina diagnóstico, sistema, implementación y evolución continua."
+    steps={[
+      { step: '01', title: 'Diagnóstico', text: 'Aterrizamos objetivos, estructura comercial, catálogo y oportunidades antes de tocar diseño o código.' },
+      { step: '02', title: 'Sistema visual', text: 'Definimos identidad, tono, jerarquía y componentes para que la tienda se sienta consistente y diferenciada.' },
+      { step: '03', title: 'Implementación', text: 'Construimos una experiencia sólida, rápida y preparada para evolucionar sin perder claridad.' },
+      { step: '04', title: 'Optimización', text: 'Medimos, aprendemos y refinamos la tienda en los puntos que más impacto tienen en ventas y eficiencia.' },
+    ]}
+  />
+
+  <ImageTextSplit
+    badge="UI & commerce"
+    title="Shopify no es solo una plataforma. Es un lenguaje de producto, claridad y tracción."
+    subtitle="La home de Agencia Shopify traduce esa idea a una presencia más consultiva: visualmente potente, técnicamente creíble y preparada para captar proyectos que valoran diseño y método."
+    points={[
+      'Cabecera flotante, compacta y semitransparente para una percepción más premium.',
+      'Sistema visual preparado para evolucionar hacia páginas de servicios, casos o propuesta comercial.',
+      'Bloques pensados para explicar Shopify, migraciones, diseño, B2B y growth sin romper la coherencia.',
+    ]}
+    image={{ src: collageImage, alt: 'Collage visual de interfaces eCommerce y checkout' }}
+  />
+
+  <ContactBlock
+    title="Si quieres una presencia muy Shopify, esta es la dirección correcta."
+    subtitle="La base de identidad ya está orientada a una agencia moderna, atractiva y especializada. Desde aquí, podemos extender el sistema hacia páginas de servicios, propuestas comerciales, casos de éxito y piezas de marca."
+    ctaPrimary={{ label: 'Continuar con la siguiente fase', href: '#contacto' }}
+    ctaSecondary={{ label: 'Revisar identidad visual', href: '/partner-shopify/' }}
+  />
+</HomeLayout>

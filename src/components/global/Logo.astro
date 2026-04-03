@@ -1,0 +1,40 @@
+---
+interface Props {
+  variant?: 'light' | 'dark';
+  class?: string;
+}
+
+const { variant = 'dark', class: className } = Astro.props;
+const textColor = variant === 'dark' ? 'text-white' : 'text-[#111714]';
+const subtextColor = variant === 'dark' ? 'text-emerald-200/75' : 'text-[#376A21]/75';
+---
+
+<a href="/" class:list={["flex items-center gap-3", className]} aria-label="Agencia Shopify - Inicio">
+  <div class="relative flex h-11 w-11 items-center justify-center overflow-hidden rounded-2xl bg-[#f3f7f0] shadow-[0_10px_30px_rgba(7,19,17,0.18)] ring-1 ring-white/50">
+    <svg viewBox="0 0 84 84" class="h-9 w-9" aria-hidden="true">
+      <defs>
+        <linearGradient id="front" x1="20" y1="18" x2="45" y2="60">
+          <stop offset="0" stop-color="#95D66A" />
+          <stop offset="1" stop-color="#62A83B" />
+        </linearGradient>
+        <linearGradient id="side" x1="48" y1="22" x2="61" y2="66">
+          <stop offset="0" stop-color="#548C36" />
+          <stop offset="1" stop-color="#376A21" />
+        </linearGradient>
+      </defs>
+      <path d="M33 24L51 18L58 61L40 66L33 24Z" fill="url(#side)" />
+      <path d="M24 25L47 18L51 18L40 66L18 58L24 25Z" fill="url(#front)" />
+      <path d="M34 15C35 10 39 7 43 7C48 7 51 10 52 15" stroke="#9CDC70" stroke-width="3.5" stroke-linecap="round" />
+      <path d="M25 18C26 10 32 4 39 4C44 4 49 6 52 10" stroke="#9CDC70" stroke-width="3.5" stroke-linecap="round" />
+      <path d="M0 0C4.8-4.7 11.4-7 18.4-5.8C16.7-1.1 14.8 3.3 12.8 7.8C9.4 4.5 5.8 3.3 2.7 4.5C-0.4 5.8-2.7 9.1-4.9 13.8C-6.5 17-8.3 19.9-11.2 22.2C-15.5 25.9-21.3 27.4-27.5 26.6C-26.1 21.7-24.2 17.4-21.7 13.3C-19 15.6-16 16.7-13 15.8C0.5 11.7 -7.7 2.7 0 0Z" transform="translate(42 43) scale(0.7)" fill="#F5F8F0" />
+    </svg>
+  </div>
+  <div class="leading-none">
+    <div class:list={["text-[0.68rem] font-semibold uppercase tracking-[0.38em] md:text-[0.72rem]", subtextColor]}>
+      Agencia
+    </div>
+    <div class:list={["-mt-0.5 text-xl font-extrabold tracking-[-0.06em] md:text-2xl", textColor]}>
+      shopify
+    </div>
+  </div>
+</a>

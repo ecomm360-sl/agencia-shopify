@@ -1,0 +1,38 @@
+---
+export interface BreadcrumbItem {
+  label: string;
+  href?: string;
+}
+
+interface Props {
+  items: BreadcrumbItem[];
+}
+
+const { items } = Astro.props;
+---
+
+<nav aria-label="Breadcrumb" class="container py-4">
+  <ol class="flex flex-wrap items-center gap-1.5 text-sm text-[#617069]" itemscope itemtype="https://schema.org/BreadcrumbList">
+    <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+      <a href="/" itemprop="item" class="transition hover:text-[#376A21]">
+        <span itemprop="name">Inicio</span>
+      </a>
+      <meta itemprop="position" content="1" />
+    </li>
+    {items.map((item, index) => (
+      <li class="flex items-center gap-1.5" itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        <svg class="h-3.5 w-3.5 text-[#617069]/50" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+          <path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" />
+        </svg>
+        {item.href ? (
+          <a href={item.href} itemprop="item" class="transition hover:text-[#376A21]">
+            <span itemprop="name">{item.label}</span>
+          </a>
+        ) : (
+          <span itemprop="name" class="font-medium text-[#111714]" aria-current="page">{item.label}</span>
+        )}
+        <meta itemprop="position" content={String(index + 2)} />
+      </li>
+    ))}
+  </ol>
+</nav>

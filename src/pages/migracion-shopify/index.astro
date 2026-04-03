@@ -1,0 +1,137 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [{ label: 'Migración a Shopify' }];
+
+const faqs = [
+  { question: '¿Cuánto tarda una migración a Shopify?', answer: 'Una migración típica tarda entre 8 y 16 semanas, dependiendo del volumen del catálogo, la complejidad de los datos, las integraciones existentes y la necesidad de preservar el posicionamiento SEO. Migraciones desde Magento suelen ser más largas que desde PrestaShop o LogiCommerce por la mayor complejidad de la arquitectura de datos.' },
+  { question: '¿Se pierde posicionamiento SEO al migrar a Shopify?', answer: 'No necesariamente. Una migración bien planificada incluye un mapa completo de redirecciones 301, preservación de la estructura de URLs cuando es posible, transferencia de metadatos, y un plan de monitorización post-migración. El SEO puede incluso mejorar gracias al mejor rendimiento de Shopify y una arquitectura de URLs más limpia.' },
+  { question: '¿Qué datos se pueden migrar a Shopify?', answer: 'Se migran productos (con variantes, imágenes y metafields), clientes (con historiales de pedido), pedidos históricos, contenido de páginas y blog, colecciones, descuentos y estructura de categorías. Algunos datos como configuraciones de módulos o plugins específicos de la plataforma origen no se migran directamente y requieren recreación o alternativas en Shopify.' },
+  { question: '¿Desde qué plataformas se puede migrar a Shopify?', answer: 'Las migraciones más comunes que realizamos son desde Magento (1 y 2), PrestaShop, LogiCommerce, WooCommerce y plataformas propietarias. Cada origen tiene sus particularidades: Magento suele implicar mayor complejidad técnica, PrestaShop requiere atención a módulos y reglas comerciales, y LogiCommerce necesita un enfoque más consultivo por su modelo de datos específico.' },
+  { question: '¿Cuánto cuesta una migración a Shopify?', answer: 'El coste depende de la complejidad: una migración básica con catálogo pequeño parte de 8.000-12.000 €, mientras que una migración desde Magento con integraciones ERP, preservación SEO avanzada y B2B puede superar los 40.000-60.000 €. El factor determinante suele ser el volumen de datos, las integraciones y la necesidad de preservar el SEO existente.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Migración a Shopify',
+  provider: organization,
+  description: 'Servicio de migración a Shopify desde Magento, PrestaShop, LogiCommerce y otras plataformas. Transferencia de datos, preservación SEO e integraciones.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'eCommerce Platform Migration',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Migración a Shopify — Proceso, Metodología y Plazos"
+  description="Migramos tu tienda a Shopify desde Magento, PrestaShop o LogiCommerce. Transferencia de datos, preservación SEO e integraciones. Agencia especializada en España."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Migración a Shopify"
+    title="Migramos tu tienda a Shopify sin perder datos, SEO ni continuidad de negocio."
+    subtitle="Transferimos catálogos, clientes, pedidos y contenido desde tu plataforma actual a Shopify con un proceso claro, probado y orientado a minimizar riesgos."
+    ctaPrimary={{ label: 'Consultar migración', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Migrar a Shopify implica transferir productos, clientes, pedidos históricos y contenido desde otra plataforma eCommerce, preservando el posicionamiento SEO y las integraciones de negocio. eComm360 gestiona migraciones desde Magento, PrestaShop y LogiCommerce con una metodología que prioriza la continuidad operativa: mapa de redirecciones, validación de datos y lanzamiento controlado con rollback disponible."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué implica migrar a Shopify
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Una migración a Shopify no es solo mover datos de un sitio a otro. Es una <strong class="text-[#111714]">oportunidad de rediseñar la experiencia comercial</strong> con una plataforma más rápida, más mantenible y con un ecosistema de apps y partners mucho más amplio.
+          </p>
+          <p>
+            Cada plataforma origen presenta sus propias fricciones. <a href="/migracion-shopify/magento-a-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Migrar desde Magento</a> implica resolver deuda técnica y complejidad de arquitectura. <a href="/migracion-shopify/prestashop-a-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Desde PrestaShop</a>, simplificar una operativa dependiente de módulos. <a href="/migracion-shopify/logicommerce-a-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Desde LogiCommerce</a>, ganar ecosistema y flexibilidad comercial.
+          </p>
+          <p>
+            En todos los casos, el objetivo es el mismo: <strong class="text-[#111714]">llegar a Shopify con todos los datos validados, el SEO protegido y la operación lista para funcionar desde el día uno</strong>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Tiendas en Magento 1 o 2 con costes de mantenimiento crecientes y deuda técnica acumulada.',
+      'Negocios en PrestaShop que necesitan más escalabilidad y menos dependencia de módulos.',
+      'Empresas en LogiCommerce que buscan más ecosistema, apps y flexibilidad comercial.',
+      'Tiendas en WooCommerce que han superado la capacidad de WordPress para eCommerce.',
+      'Cualquier negocio eCommerce que necesita un replatforming ordenado a Shopify.',
+    ]}
+    notSuitable={[
+      'Negocios satisfechos con su plataforma actual y sin problemas de escalabilidad o mantenimiento.',
+      'Tiendas con requisitos muy específicos que solo su plataforma actual puede cubrir.',
+      'Proyectos sin presupuesto para una migración profesional (riesgo alto de pérdida de datos o SEO).',
+    ]}
+  />
+
+  <Methodology
+    title="Cómo gestionamos una migración a Shopify"
+    subtitle="Un proceso en 6 fases diseñado para minimizar riesgos y proteger la continuidad del negocio."
+    steps={[
+      { step: '01', title: 'Auditoría de origen', text: 'Analizamos la plataforma actual: estructura de datos, catálogo, integraciones, SEO existente y complejidad operativa.' },
+      { step: '02', title: 'Plan de migración', text: 'Definimos el mapa de datos, las reglas de transformación, el plan de redirecciones 301 y la estrategia de preservación SEO.' },
+      { step: '03', title: 'Migración de datos', text: 'Transferimos productos, clientes, pedidos y contenido con validación automatizada de integridad.' },
+      { step: '04', title: 'Desarrollo e integración', text: 'Implementamos el diseño de la nueva tienda y configuramos las integraciones necesarias (ERP, CRM, PIM).' },
+      { step: '05', title: 'QA y validación', text: 'Testing exhaustivo de datos migrados, flujos de compra, integraciones y rendimiento. Validación de redirecciones SEO.' },
+      { step: '06', title: 'Lanzamiento controlado', text: 'Go-live con monitorización activa, rollback disponible y soporte post-migración durante las primeras semanas.' },
+    ]}
+  />
+
+  <section class="bg-[#f3f7f0] py-16 md:py-20">
+    <div class="container">
+      <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+        Migraciones por plataforma de origen
+      </h2>
+      <div class="mt-8 grid gap-5 md:grid-cols-3">
+        {[
+          { title: 'Magento a Shopify', text: 'Resuelve deuda técnica, reduce costes de mantenimiento y gana velocidad con una plataforma moderna.', href: '/migracion-shopify/magento-a-shopify/' },
+          { title: 'PrestaShop a Shopify', text: 'Simplifica operativa, elimina dependencia de módulos y escala sin fricciones técnicas.', href: '/migracion-shopify/prestashop-a-shopify/' },
+          { title: 'LogiCommerce a Shopify', text: 'Gana ecosistema, flexibilidad comercial y un catálogo de apps y partners mucho más amplio.', href: '/migracion-shopify/logicommerce-a-shopify/' },
+        ].map((item) => (
+          <a href={item.href} class="group rounded-2xl bg-white p-6 shadow-[0_12px_30px_rgba(17,23,20,0.06)] ring-1 ring-black/5 transition hover:-translate-y-0.5 hover:shadow-[0_18px_50px_rgba(17,23,20,0.1)]">
+            <h3 class="text-xl font-bold tracking-[-0.04em] text-[#111714] group-hover:text-[#376A21]">{item.title}</h3>
+            <p class="mt-3 text-sm leading-7 text-[#617069]">{item.text}</p>
+            <span class="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-[#376A21]">
+              Ver más
+              <svg class="h-4 w-4 transition group-hover:translate-x-1" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M7.21 14.77a.75.75 0 01.02-1.06L11.168 10 7.23 6.29a.75.75 0 111.04-1.08l4.5 4.25a.75.75 0 010 1.08l-4.5 4.25a.75.75 0 01-1.06-.02z" clip-rule="evenodd" /></svg>
+            </span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Estás pensando en migrar a Shopify?"
+    subtitle="Analizamos tu plataforma actual, estimamos la complejidad y te proponemos un plan de migración realista."
+    ctaPrimary={{ label: 'Consultar migración', href: '#contacto' }}
+  />
+</LandingLayout>

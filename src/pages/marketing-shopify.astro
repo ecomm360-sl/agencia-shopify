@@ -1,0 +1,106 @@
+---
+import LandingLayout from '../layouts/LandingLayout.astro';
+import HeroLight from '../components/sections/HeroLight.astro';
+import ShortAnswer from '../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../components/aeo/ForWhomTable.astro';
+import Methodology from '../components/aeo/Methodology.astro';
+import FAQAccordion from '../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../components/sections/ContactBlock.astro';
+import { organization } from '../data/structured-data';
+
+const breadcrumbs = [{ label: 'Marketing Shopify' }];
+
+const faqs = [
+  { question: '¿Qué incluye el marketing para Shopify?', answer: 'Incluye SEO técnico y de contenido optimizado para Shopify, CRO (optimización de conversión), email marketing con Klaviyo o similar, campañas de performance en Google Ads y Meta Ads, análisis de funnel de ventas, personalización de la experiencia de compra y estrategias de retención y recurrencia.' },
+  { question: '¿Por qué el marketing en Shopify es diferente al marketing genérico?', answer: 'Porque Shopify tiene sus propias particularidades: estructura de URLs específica, limitaciones y opciones de SEO propias, integraciones nativas con herramientas de marketing, un ecosistema de apps de CRO y email, y un checkout que condiciona la estrategia de conversión. Hacer marketing en Shopify requiere conocer la plataforma para no implementar soluciones que la contradigan.' },
+  { question: '¿Cuánto cuesta una estrategia de marketing para Shopify?', answer: 'Depende del alcance. Un plan de SEO + CRO para Shopify parte de 1.500-2.500 €/mes. Si se añaden campañas de performance, email marketing y estrategia integral de crecimiento, el rango típico es de 3.000-6.000 €/mes, más el presupuesto publicitario.' },
+  { question: '¿El SEO en Shopify tiene limitaciones?', answer: 'Shopify tiene algunas particularidades de SEO: estructura de URLs con /products/, /collections/, etc. que no se puede modificar completamente, pero que funciona bien si se trabaja correctamente. Las limitaciones principales se compensan con metafields, redirecciones, y buenas prácticas de contenido. El rendimiento nativo de Shopify (velocidad de carga) es una ventaja SEO significativa.' },
+  { question: '¿Qué herramientas de email marketing funcionan mejor con Shopify?', answer: 'Klaviyo es la referencia para email marketing en Shopify: tiene la integración más profunda con los datos de la tienda (compras, carritos abandonados, navegación). Otras opciones sólidas son Omnisend y Shopify Email. La clave es que la herramienta se integre nativamente con los eventos de Shopify para segmentar y automatizar flujos basados en comportamiento real de compra.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Marketing para Shopify',
+  provider: organization,
+  description: 'Servicios de marketing digital especializados en Shopify: SEO, CRO, email marketing, performance y estrategias de crecimiento para tiendas online.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'eCommerce Marketing Services',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Marketing para Shopify — Growth, SEO y Conversión"
+  description="Marketing digital especializado en Shopify: SEO, CRO, email marketing con Klaviyo, performance y estrategias de crecimiento orientadas a ventas."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Marketing Shopify"
+    title="Marketing que entiende Shopify: SEO, conversión y crecimiento medible."
+    subtitle="No hacemos marketing genérico sobre una tienda Shopify. Hacemos marketing condicionado por las particularidades, fortalezas y oportunidades reales de la plataforma."
+    ctaPrimary={{ label: 'Consultar estrategia de growth', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="El marketing para Shopify combina SEO técnico adaptado a la estructura de URLs de la plataforma, optimización de conversión (CRO) en el funnel de compra, email marketing con herramientas como Klaviyo que se integran nativamente con los datos de Shopify, y campañas de performance orientadas a ROI. eComm360 trabaja el crecimiento de tiendas Shopify con un enfoque que parte de la plataforma, no que se aplica sobre ella de forma genérica."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué hace diferente al marketing en Shopify
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Shopify tiene su propia lógica de URLs, su estructura de datos, sus limitaciones de SEO y sus fortalezas en velocidad y rendimiento. <strong class="text-[#111714]">Un plan de marketing que ignore estas particularidades es un plan genérico</strong> que no aprovecha las ventajas de la plataforma y puede incluso trabajar en su contra.
+          </p>
+          <p>
+            Nuestro enfoque parte de conocer Shopify en profundidad: sabemos qué se puede y qué no se puede hacer con las URLs, cómo funciona el checkout para optimizar la conversión, qué apps de CRO y email realmente aportan valor, y cómo usar los datos nativos de Shopify para segmentar y automatizar.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Tiendas Shopify que ya funcionan pero quieren crecer de forma medida y rentable.',
+      'Marcas DTC que necesitan mejorar captación, conversión y retención.',
+      'Negocios que han invertido en la tienda pero no están obteniendo el retorno esperado.',
+      'Empresas que quieren un equipo de marketing que entienda la plataforma, no solo los anuncios.',
+    ]}
+    notSuitable={[
+      'Tiendas que aún no tienen un producto o catálogo validado.',
+      'Negocios que buscan solo gestión de redes sociales o community management.',
+      'Empresas que no usan Shopify como plataforma de venta.',
+    ]}
+  />
+
+  <Methodology
+    title="Cómo trabajamos el crecimiento"
+    steps={[
+      { step: '01', title: 'Auditoría', text: 'Analizamos la tienda, el funnel, el tráfico actual, las conversiones y los puntos de fricción. Identificamos oportunidades con datos, no intuición.' },
+      { step: '02', title: 'Estrategia', text: 'Definimos un plan de acción con prioridades claras: SEO, CRO, email, performance o una combinación adaptada a tus objetivos.' },
+      { step: '03', title: 'Ejecución', text: 'Implementamos las acciones con medición desde el primer día. Tests A/B, optimización continua y reportes transparentes.' },
+      { step: '04', title: 'Iteración', text: 'Revisamos resultados, ajustamos la estrategia y escalamos lo que funciona. El growth no es un proyecto, es un proceso.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Tu tienda Shopify no está creciendo como debería?"
+    subtitle="Analizamos tu caso y te proponemos un plan de crecimiento realista, medible y adaptado a Shopify."
+    ctaPrimary={{ label: 'Solicitar auditoría', href: '#contacto' }}
+  />
+</LandingLayout>

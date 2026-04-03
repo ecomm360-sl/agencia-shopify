@@ -1,0 +1,43 @@
+<svg width="1400" height="420" viewBox="0 0 1400 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bagFront" x1="90" y1="68" x2="230" y2="260" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#95D66A"/>
+      <stop offset="1" stop-color="#62A83B"/>
+    </linearGradient>
+    <linearGradient id="bagSide" x1="240" y1="96" x2="286" y2="312" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#548C36"/>
+      <stop offset="1" stop-color="#376A21"/>
+    </linearGradient>
+    <linearGradient id="handle" x1="138" y1="24" x2="204" y2="110" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A6E17B"/>
+      <stop offset="1" stop-color="#6DAE43"/>
+    </linearGradient>
+    <filter id="shadow" x="0" y="0" width="340" height="360" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="16"/>
+      <feGaussianBlur stdDeviation="16"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0352941 0 0 0 0 0.0862745 0 0 0 0 0.054902 0 0 0 0.16 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_2"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_2" result="shape"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#shadow)">
+    <path d="M122 112L228 80L270 306L154 336L122 112Z" fill="url(#bagSide)"/>
+    <path d="M88 114L212 76L228 80L154 336L58 302L88 114Z" fill="url(#bagFront)"/>
+    <path d="M88 114L212 76L228 80L104 118L88 114Z" fill="#B4EA8E" fill-opacity="0.85"/>
+    <path d="M146 62C151 40 167 28 186 28C208 28 224 42 229 65" stroke="url(#handle)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M98 78C103 44 130 20 166 20C186 20 205 28 220 44" stroke="url(#handle)" stroke-width="16" stroke-linecap="round"/>
+    <path d="M144 170C159 156 181 149 206 153C200 170 193 185 186 201C174 191 161 187 150 191C139 195 132 206 124 222C118 234 111 244 101 252C86 265 66 271 43 268C48 250 55 234 64 219C73 227 84 230 95 227C105 224 114 213 121 197C127 184 134 175 144 170Z" transform="translate(76 24)" fill="#F5F8F0" fill-opacity="0.98"/>
+  </g>
+
+  <g>
+    <text x="340" y="146" fill="#5F6C65" font-family="Manrope, Arial, sans-serif" font-size="58" font-weight="600" letter-spacing="6">AGENCIA</text>
+    <g transform="translate(340 170) skewX(-10)">
+      <text x="0" y="92" fill="#111714" font-family="Manrope, Arial, sans-serif" font-size="148" font-weight="700" letter-spacing="-5">shopify</text>
+    </g>
+    <rect x="344" y="308" width="344" height="10" rx="5" fill="#7ECF4D" fill-opacity="0.9"/>
+    <text x="344" y="364" fill="#617069" font-family="Instrument Sans, Arial, sans-serif" font-size="34" font-weight="500" letter-spacing="1.5">experts in growth commerce</text>
+  </g>
+</svg>

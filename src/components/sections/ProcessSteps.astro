@@ -1,0 +1,45 @@
+---
+interface Step {
+  step: string;
+  title: string;
+  text: string;
+}
+
+interface Props {
+  badge: string;
+  title: string;
+  subtitle: string;
+  steps: Step[];
+}
+
+const { badge, title, subtitle, steps } = Astro.props;
+---
+
+<section id="proceso" class="bg-white py-24 md:py-28">
+  <div class="container">
+    <div class="grid gap-10 lg:grid-cols-[0.8fr_1.2fr] lg:gap-16">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-[#d8e5d3] bg-[#f6faf4] px-4 py-2 text-sm text-[#376A21]">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M18 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4Z"/><path d="M6 16V4"/><path d="M18 20V8"/></svg>
+          {badge}
+        </div>
+        <h2 class="mt-6 text-balance text-4xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-5xl">
+          {title}
+        </h2>
+        <p class="mt-6 max-w-xl text-lg leading-8 text-[#617069]">
+          {subtitle}
+        </p>
+      </div>
+
+      <div class="grid gap-5 md:grid-cols-2">
+        {steps.map((item) => (
+          <article class="rounded-[2rem] bg-[#f8fbf6] p-7 shadow-[0_16px_50px_rgba(17,23,20,0.05)] ring-1 ring-black/5">
+            <div class="text-sm font-semibold tracking-[0.24em] text-[#5da533]">{item.step}</div>
+            <h3 class="mt-4 text-2xl font-bold tracking-[-0.04em] text-[#111714]">{item.title}</h3>
+            <p class="mt-4 text-sm leading-7 text-[#617069]">{item.text}</p>
+          </article>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

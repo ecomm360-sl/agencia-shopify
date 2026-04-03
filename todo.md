@@ -1,0 +1,20 @@
+
+- [ ] Investigar agencias Shopify en España y su posicionamiento.
+- [ ] Analizar la intención de búsqueda de las keywords objetivo: Shopify, Shopify Plus, Shopify Advanced, Shopify B2C, Shopify DtC, Migración Shopify, Magento a Shopify, PrestaShop a Shopify, LogiCommerce a Shopify, Integración Shopify, ERP Shopify, Marketing Shopify y Partner Shopify.
+- [ ] Diseñar agrupaciones temáticas y arquitectura de URLs independiente para SEO, GEO y AEO.
+- [ ] Definir contenidos, enfoque semántico y prioridad por cada URL propuesta.
+- [ ] Aplicar la arquitectura de contenidos al proyecto web agencia-shopify.com.
+- [ ] Definir la dirección visual del logo híbrido eComm360 + Shopify.
+- [ ] Crear una versión principal del logotipo fusionado en SVG.
+- [ ] Crear una variante isotipo del logotipo fusionado en SVG.
+- [ ] Entregar al usuario los nuevos activos de marca.
+- [ ] Ajustar el logotipo híbrido manteniendo la composición actual y modificando solo los colores.
+- [ ] Actualizar la variante isotipo con la misma nueva paleta cromática.
+- [ ] Entregar al usuario la versión recoloreada del logotipo.
+- [ ] Restaurar el logotipo original de eComm360 como activo principal de marca.
+- [ ] Descartar la variante híbrida como referencia activa.
+- [ ] Confirmar al usuario que se mantiene el logotipo original.
+- [ ] Reunir documentación, estrategia, activos de marca y código del diseño para transferencia a Claude.
+- [ ] Crear un archivo de contexto con instrucciones y estructura del proyecto para Claude.
+- [ ] Generar un ZIP final con todos los materiales preparados.
+- [ ] Entregar el paquete ZIP al usuario.

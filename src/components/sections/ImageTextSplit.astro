@@ -1,0 +1,53 @@
+---
+interface Props {
+  badge: string;
+  title: string;
+  subtitle: string;
+  points: string[];
+  image: { src: string; alt: string };
+  imagePosition?: 'left' | 'right';
+}
+
+const { badge, title, subtitle, points, image, imagePosition = 'left' } = Astro.props;
+---
+
+<section class="bg-[#eef5ea] py-24 md:py-28">
+  <div class="container">
+    <div class="grid items-center gap-14 lg:grid-cols-[1.08fr_0.92fr] lg:gap-16">
+      <div class:list={[imagePosition === 'left' ? 'order-2 lg:order-1' : 'order-2']}>
+        <div class="overflow-hidden rounded-[2rem] bg-white p-3 shadow-[0_25px_80px_rgba(17,23,20,0.1)] ring-1 ring-black/5">
+          <img
+            src={image.src}
+            alt={image.alt}
+            class="w-full rounded-[1.5rem] object-cover"
+            width="640"
+            height="480"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <div class:list={[imagePosition === 'left' ? 'order-1 lg:order-2' : 'order-1']}>
+        <div class="inline-flex items-center gap-2 rounded-full border border-[#d3e5ca] bg-white/80 px-4 py-2 text-sm text-[#376A21]">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l4.41-4.41A2 2 0 0 1 7.83 2h8.34a2 2 0 0 1 1.42.59L22 7M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/></svg>
+          {badge}
+        </div>
+        <h2 class="mt-6 text-balance text-4xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-5xl">
+          {title}
+        </h2>
+        <p class="mt-6 text-lg leading-8 text-[#617069]">
+          {subtitle}
+        </p>
+
+        <div class="mt-8 space-y-4">
+          {points.map((point) => (
+            <div class="flex items-start gap-3 rounded-2xl bg-white px-5 py-4 shadow-[0_12px_30px_rgba(17,23,20,0.06)] ring-1 ring-black/5">
+              <div class="mt-1 h-2.5 w-2.5 flex-shrink-0 rounded-full bg-[#7ECF4D]"></div>
+              <p class="text-sm leading-7 text-[#2a352f]">{point}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

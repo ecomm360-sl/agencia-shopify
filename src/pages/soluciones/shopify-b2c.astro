@@ -1,0 +1,111 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [
+  { label: 'Soluciones' },
+  { label: 'Shopify B2C' },
+];
+
+const faqs = [
+  { question: '¿Por qué Shopify es buena plataforma para B2C?', answer: 'Shopify domina el eCommerce B2C por varias razones: el checkout con mayor tasa de conversión del mercado, una plataforma estable y rápida sin necesidad de hosting propio, un ecosistema de más de 8.000 apps para extender funcionalidades, integraciones nativas con herramientas de marketing, y una evolución constante con nuevas funcionalidades sin necesidad de actualizaciones manuales.' },
+  { question: '¿Cuánto cuesta una tienda Shopify B2C profesional?', answer: 'Una tienda Shopify B2C con diseño profesional a medida, configuración de catálogo optimizado, checkout personalizado y configuración de email marketing parte de 10.000-15.000 €. Para catálogos grandes con filtrado avanzado, personalización de experiencia y integración con sistemas externos, el rango es de 15.000-35.000 €.' },
+  { question: '¿Shopify puede manejar catálogos grandes?', answer: 'Sí. Shopify soporta hasta 200.000 productos con variantes ilimitadas. Para catálogos grandes, es importante implementar una buena estructura de colecciones, filtrado por metafields, y optimización de la búsqueda interna. En Shopify Plus, las capacidades de catálogo se amplían significativamente.' },
+  { question: '¿Cómo se optimiza la conversión en Shopify B2C?', answer: 'La optimización de conversión en Shopify B2C se trabaja en varias capas: velocidad de carga (Shopify ya es rápido por defecto), experiencia de navegación y búsqueda, páginas de producto optimizadas, checkout simplificado (Shop Pay tiene la mayor tasa de conversión), email de carrito abandonado, y personalización de la experiencia basada en comportamiento.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Shopify B2C',
+  provider: organization,
+  description: 'Diseño y desarrollo de tiendas Shopify B2C para retailers y comercios que venden al consumidor final. Catálogo, conversión, checkout y crecimiento.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'B2C eCommerce Development',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Shopify B2C — Tiendas para Consumidor Final"
+  description="Tiendas Shopify B2C profesionales: diseño orientado a conversión, catálogo optimizado, checkout con Shop Pay y estrategias de crecimiento."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Shopify B2C"
+    title="Tiendas Shopify para vender al consumidor final con la mejor experiencia de compra."
+    subtitle="Diseñamos y desarrollamos tiendas Shopify B2C con catálogos optimizados, checkout de alta conversión y experiencias de compra que fidelizan."
+    ctaPrimary={{ label: 'Consultar proyecto B2C', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Shopify B2C es la configuración estándar de Shopify orientada a retailers y comercios que venden al consumidor final. Incluye gestión de catálogo con colecciones y variantes, checkout optimizado con Shop Pay (la mayor tasa de conversión del mercado), integración con herramientas de marketing y email, y un ecosistema de apps para extender cualquier funcionalidad. eComm360 diseña tiendas B2C sobre Shopify con enfoque en conversión, rendimiento y experiencia de compra diferenciada."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué hace especial a una tienda Shopify B2C bien construida
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Una tienda Shopify B2C bien construida no es un template con productos. Es una <strong class="text-[#111714]">máquina de conversión</strong>: navegación intuitiva, páginas de producto que venden, checkout que no pierde clientes, y un sistema de marketing que trae de vuelta a los que no compraron a la primera.
+          </p>
+          <p>
+            Shopify aporta la base: la plataforma más estable del mercado, el checkout con mayor conversión, y un ecosistema de apps que cubre cualquier necesidad. Nuestro trabajo es <strong class="text-[#111714]">convertir esa base en una experiencia de compra que refleje tu marca y venda tu producto</strong>.
+          </p>
+          <p>
+            Si además vendes directamente como marca (sin intermediarios), mira también nuestro enfoque para <a href="/soluciones/shopify-dtc/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Shopify DTC</a>, que incluye estrategias de retención y comunidad.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Retailers y comercios que venden al consumidor final online.',
+      'Marcas con catálogos medianos-grandes que necesitan una experiencia de navegación excelente.',
+      'Negocios que quieren optimizar la conversión y reducir la tasa de abandono de carrito.',
+      'Empresas que buscan una plataforma eCommerce escalable y sin mantenimiento técnico.',
+    ]}
+    notSuitable={[
+      'Negocios exclusivamente B2B sin componente de venta al consumidor.',
+      'Proyectos con menos de 10 productos que no justifican una inversión profesional.',
+      'Empresas que necesitan un marketplace multi-vendedor (Shopify no cubre esto nativamente).',
+    ]}
+  />
+
+  <Methodology
+    title="Cómo construimos una tienda B2C en Shopify"
+    steps={[
+      { step: '01', title: 'Estrategia comercial', text: 'Analizamos tu catálogo, público objetivo, competencia y objetivos para diseñar la arquitectura de la tienda.' },
+      { step: '02', title: 'Diseño y UX', text: 'Creamos un diseño a medida orientado a conversión: navegación clara, páginas de producto que venden y checkout optimizado.' },
+      { step: '03', title: 'Desarrollo', text: 'Implementamos sobre Shopify con rendimiento optimizado, filtrado avanzado, búsqueda inteligente y configuración de email marketing.' },
+      { step: '04', title: 'Lanzamiento y growth', text: 'Lanzamos con analítica configurada y activamos estrategias de captación, conversión y retención desde el día uno.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Necesitas una tienda Shopify que convierta?"
+    subtitle="Cuéntanos tu proyecto y te proponemos un enfoque B2C adaptado a tu catálogo y tus objetivos."
+    ctaPrimary={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  />
+</LandingLayout>

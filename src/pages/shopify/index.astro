@@ -1,0 +1,124 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import ServiceCards from '../../components/sections/ServiceCards.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [{ label: 'Agencia Shopify' }];
+
+const faqs = [
+  { question: '¿Qué hace una agencia Shopify especializada?', answer: 'Una agencia Shopify especializada diseña, desarrolla y optimiza tiendas online sobre la plataforma Shopify. A diferencia de una agencia generalista, domina el ecosistema Shopify en profundidad: temas, apps, integraciones, Shopify Plus, B2B, checkout extensibility y las mejores prácticas de rendimiento y conversión propias de la plataforma.' },
+  { question: '¿Cuánto cuesta trabajar con una agencia Shopify?', answer: 'El coste depende del alcance del proyecto. Un diseño y desarrollo de tienda Shopify puede ir desde los 8.000 € para un proyecto básico hasta más de 50.000 € para implementaciones Shopify Plus con integraciones ERP, B2B y personalización avanzada. Lo determinante es la complejidad del catálogo, las integraciones necesarias y el nivel de diseño requerido.' },
+  { question: '¿Cuánto tarda un proyecto Shopify típico?', answer: 'Un proyecto de diseño y desarrollo Shopify suele durar entre 6 y 14 semanas, dependiendo de la complejidad. Una migración desde otra plataforma puede añadir 2-4 semanas adicionales para la transferencia de datos y la validación SEO. Los proyectos Shopify Plus con integraciones B2B y ERP pueden extenderse hasta 16-20 semanas.' },
+  { question: '¿Necesito Shopify Plus o me basta con Shopify estándar?', answer: 'Shopify Plus es necesario cuando tu operación requiere personalización avanzada del checkout, múltiples tiendas, venta B2B nativa, automatización de flujos con Shopify Flow, o cuando procesas un volumen alto de transacciones. Si tu negocio factura menos de 500.000 € al año y no necesita B2B, probablemente Shopify estándar o Advanced sea suficiente.' },
+  { question: '¿Cómo se diferencia eComm360 de otras agencias Shopify en España?', answer: 'eComm360 se especializa en la intersección entre Shopify, B2B, integración ERP y migración de plataformas. No somos una agencia creativa generalista: nuestro enfoque es técnico y consultivo, orientado a operaciones complejas, catálogos grandes y negocios que necesitan conectar Shopify con su infraestructura existente.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Agencia Shopify',
+  provider: organization,
+  description: 'Servicios especializados en diseño, desarrollo, migración e integración de tiendas Shopify en España.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'Shopify Development Agency',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Agencia Shopify en España — Expertos en Diseño y Desarrollo Shopify"
+  description="Agencia Shopify especializada en diseño, migraciones, B2B, integraciones ERP y crecimiento. Partner tecnológico Shopify en España con enfoque consultivo."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Agencia Shopify en España"
+    title="Diseñamos, migramos y escalamos tiendas Shopify con criterio de negocio."
+    subtitle="Somos una agencia especializada en Shopify que combina diseño premium, capacidad técnica y visión de crecimiento para marcas que quieren vender más y mejor en eCommerce."
+    ctaPrimary={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Una agencia Shopify especializada diseña, desarrolla y optimiza tiendas online en Shopify con un enfoque que va más allá del diseño: incluye migración de plataformas, integración con ERP y sistemas B2B, y estrategias de crecimiento. eComm360 es partner tecnológico Shopify en España, orientado a operaciones complejas y negocios que necesitan un socio técnico, no solo una agencia creativa."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué hacemos como agencia Shopify
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Nuestro trabajo comienza donde termina el template: en la <strong class="text-[#111714]">estrategia comercial</strong>, la <strong class="text-[#111714]">arquitectura del catálogo</strong>, la integración con los sistemas del negocio y la experiencia de compra que realmente convierte.
+          </p>
+          <p>
+            Trabajamos con marcas que venden al consumidor final (<a href="/soluciones/shopify-b2c/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">B2C</a>), directamente desde la marca (<a href="/soluciones/shopify-dtc/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">DTC</a>) y con empresas que necesitan canales profesionales de venta mayorista (<a href="/soluciones/shopify-b2b/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">B2B</a>).
+          </p>
+          <p>
+            Si vienes de otra plataforma, te ayudamos con la <a href="/migracion-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">migración a Shopify</a>. Si necesitas conectar tu tienda con un ERP, CRM o PIM, diseñamos la <a href="/integracion-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">integración</a> para que la operación fluya sin fricción.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Marcas eCommerce que quieren una tienda Shopify profesional y orientada a conversión.',
+      'Negocios que necesitan migrar desde Magento, PrestaShop u otra plataforma a Shopify.',
+      'Empresas B2B que buscan venta mayorista con catálogos privados y pricing segmentado.',
+      'Operaciones complejas que requieren integración con ERP, CRM o PIM.',
+      'Marcas DTC que quieren controlar su canal directo y crecer con criterio.',
+    ]}
+    notSuitable={[
+      'Negocios que solo necesitan instalar un template y publicar pocos productos.',
+      'Proyectos con presupuesto inferior a 5.000 € sin complejidad técnica.',
+      'Tiendas que no usan ni planean usar Shopify como plataforma.',
+    ]}
+  />
+
+  <ServiceCards
+    badge="Servicios Shopify"
+    title="Todo lo que necesitas para tu tienda Shopify, desde el diseño hasta el crecimiento."
+    subtitle="Cada servicio nace de una necesidad real del negocio, no de un catálogo genérico."
+    services={[
+      { icon: 'store', title: 'Diseño y desarrollo Shopify', text: 'Tiendas con enfoque en conversión, rendimiento y coherencia de marca. Diseño a medida sobre Shopify, no templates retocados.', href: '/shopify/' },
+      { icon: 'workflow', title: 'Migraciones a Shopify', text: 'Transferimos catálogos, contenido, clientes y SEO desde Magento, PrestaShop o LogiCommerce con una transición ordenada.', href: '/migracion-shopify/' },
+      { icon: 'layout', title: 'Shopify B2B', text: 'Catálogos privados, precios por cliente, condiciones de pago y pedidos automatizados para venta profesional.', href: '/soluciones/shopify-b2b/' },
+      { icon: 'rocket', title: 'Growth y Marketing Shopify', text: 'CRO, SEO, email marketing y performance sobre Shopify. Crecimiento medido y orientado a resultados.', href: '/marketing-shopify/' },
+    ]}
+  />
+
+  <Methodology
+    title="Cómo trabajamos"
+    subtitle="Un proceso claro, consultivo y orientado a resultados."
+    steps={[
+      { step: '01', title: 'Diagnóstico', text: 'Analizamos tu negocio, catálogo, operativa y objetivos para definir el alcance real del proyecto.' },
+      { step: '02', title: 'Estrategia', text: 'Diseñamos la arquitectura de la tienda, las integraciones necesarias y el plan de migración si aplica.' },
+      { step: '03', title: 'Implementación', text: 'Desarrollamos la tienda con diseño premium, optimización de rendimiento y preparación para escalar.' },
+      { step: '04', title: 'Lanzamiento y growth', text: 'Lanzamos con todo testado y activamos estrategias de crecimiento medibles.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Buscas una agencia Shopify que entienda tu negocio?"
+    subtitle="Cuéntanos tu proyecto y te proponemos un enfoque adaptado a tus objetivos, complejidad y plazos."
+    ctaPrimary={{ label: 'Solicitar propuesta', href: '#contacto' }}
+  />
+</LandingLayout>

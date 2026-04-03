@@ -1,0 +1,125 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import ComparisonTable from '../../components/aeo/ComparisonTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [
+  { label: 'Agencia Shopify', href: '/shopify/' },
+  { label: 'Shopify Plus' },
+];
+
+const faqs = [
+  { question: '¿Qué diferencia a Shopify Plus de Shopify estándar?', answer: 'Shopify Plus ofrece personalización avanzada del checkout, hasta 10 tiendas adicionales, Shopify Flow para automatización, acceso a APIs exclusivas, un merchant success manager dedicado, mayor capacidad de procesamiento y funcionalidades B2B nativas como catálogos privados y precios por empresa.' },
+  { question: '¿Cuánto cuesta Shopify Plus?', answer: 'Shopify Plus parte de 2.300 USD/mes con un compromiso de 3 años, o desde 2.500 USD/mes en planes flexibles. El coste de implementación con una agencia especializada suele oscilar entre 25.000 € y 80.000 € dependiendo del nivel de personalización, integraciones y complejidad B2B requerida.' },
+  { question: '¿Shopify Plus permite venta B2B y B2C en la misma tienda?', answer: 'Sí. Shopify Plus permite gestionar canales B2B y B2C desde una sola instalación, con catálogos privados, precios diferenciados, condiciones de pago específicas para mayoristas y experiencias de checkout separadas. Es una de las pocas plataformas que resuelve este escenario sin integraciones externas complejas.' },
+  { question: '¿Cuánto tarda una implementación Shopify Plus?', answer: 'Una implementación Shopify Plus típica tarda entre 10 y 20 semanas, dependiendo de la complejidad de las integraciones (ERP, CRM, PIM), la migración de datos, la personalización del checkout y la configuración B2B. Los proyectos más sencillos pueden completarse en 8 semanas.' },
+  { question: '¿Necesito una agencia para implementar Shopify Plus?', answer: 'Técnicamente no, pero en la práctica sí. Shopify Plus ofrece capacidades avanzadas que requieren experiencia en desarrollo Liquid, Checkout Extensibility, APIs de Shopify, integración con sistemas empresariales y configuración B2B. Una agencia especializada maximiza el retorno de la inversión en la plataforma.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Implementación Shopify Plus',
+  provider: organization,
+  description: 'Agencia especializada en Shopify Plus para empresas que necesitan escalabilidad, B2B, personalización avanzada e integraciones enterprise.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'Shopify Plus Implementation',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Shopify Plus — Agencia Especializada en España"
+  description="Agencia Shopify Plus en España. Implementación enterprise con B2B, integraciones ERP, checkout personalizado y escalabilidad. Partner tecnológico eComm360."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Shopify Plus"
+    title="Shopify Plus para operaciones que necesitan escalar sin límites."
+    subtitle="Implementamos Shopify Plus para empresas que requieren B2B nativo, checkout personalizado, integraciones enterprise y capacidad para gestionar volúmenes altos de transacciones."
+    ctaPrimary={{ label: 'Solicitar propuesta Shopify Plus', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Shopify Plus es la versión enterprise de Shopify, diseñada para empresas con operaciones complejas que necesitan personalización avanzada del checkout, venta B2B y B2C en una sola plataforma, integración con ERP y CRM, y capacidad para manejar picos de tráfico sin degradación de rendimiento. eComm360 implementa Shopify Plus en España con enfoque en integraciones técnicas y operaciones que requieren un partner con criterio empresarial."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Qué es Shopify Plus y cuándo tiene sentido
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Shopify Plus no es simplemente un plan más caro de Shopify. Es una <strong class="text-[#111714]">plataforma enterprise</strong> con capacidades específicas para negocios que operan a una escala donde Shopify estándar se queda corto: personalización profunda del checkout, automatización de procesos con Shopify Flow, hasta 10 tiendas adicionales para expansión internacional, y funcionalidades <a href="/soluciones/shopify-b2b/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">B2B nativas</a>.
+          </p>
+          <p>
+            Si tu negocio necesita conectar Shopify con un <a href="/integracion-shopify/erp-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">ERP</a>, gestionar catálogos privados con precios por cliente, o lanzar múltiples mercados con una sola infraestructura, Shopify Plus es probablemente la decisión correcta.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Empresas con facturación superior a 1M € anuales en eCommerce.',
+      'Negocios que necesitan venta B2B y B2C desde una sola plataforma.',
+      'Operaciones que requieren integración profunda con ERP, CRM o PIM.',
+      'Marcas con expansión internacional que necesitan múltiples tiendas o mercados.',
+      'Empresas que requieren personalización avanzada del checkout.',
+    ]}
+    notSuitable={[
+      'Tiendas pequeñas con catálogos simples y sin complejidad operativa.',
+      'Negocios que no necesitan B2B, multi-tienda ni automatización avanzada.',
+      'Proyectos donde el presupuesto de plataforma + implementación no supera los 30.000 € anuales.',
+    ]}
+  />
+
+  <ComparisonTable
+    title="Shopify Plus vs Shopify Advanced"
+    thisLabel="Shopify Plus"
+    otherLabel="Shopify Advanced"
+    items={[
+      { label: 'Personalización checkout', thisOption: 'Checkout Extensibility completo + APIs exclusivas', otherOption: 'Personalización básica del checkout' },
+      { label: 'B2B nativo', thisOption: 'Catálogos privados, precios por empresa, condiciones de pago', otherOption: 'No disponible nativamente' },
+      { label: 'Multi-tienda', thisOption: 'Hasta 10 tiendas adicionales incluidas', otherOption: '1 tienda por suscripción' },
+      { label: 'Automatización', thisOption: 'Shopify Flow sin límites + Launchpad', otherOption: 'Shopify Flow básico' },
+      { label: 'Soporte', thisOption: 'Merchant Success Manager dedicado', otherOption: 'Soporte estándar prioritario' },
+      { label: 'Precio mensual', thisOption: 'Desde 2.300 USD/mes', otherOption: '399 USD/mes' },
+    ]}
+  />
+
+  <Methodology
+    title="Cómo implementamos Shopify Plus"
+    steps={[
+      { step: '01', title: 'Auditoría técnica', text: 'Evaluamos tu infraestructura actual, integraciones necesarias, complejidad del catálogo y requisitos B2B para dimensionar el proyecto correctamente.' },
+      { step: '02', title: 'Arquitectura de solución', text: 'Diseñamos la arquitectura técnica completa: flujos de datos, integraciones ERP/CRM, estructura del checkout, configuración B2B y plan de migración.' },
+      { step: '03', title: 'Desarrollo e integración', text: 'Implementamos el diseño, las integraciones, la personalización del checkout y las automatizaciones con Shopify Flow.' },
+      { step: '04', title: 'QA, migración y lanzamiento', text: 'Testing exhaustivo de flujos de compra, integraciones y rendimiento. Migración de datos con validación completa antes del lanzamiento.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Tu operación necesita Shopify Plus?"
+    subtitle="Analizamos tu caso y te ayudamos a decidir si Shopify Plus es la plataforma adecuada para tus objetivos de crecimiento."
+    ctaPrimary={{ label: 'Consultar sobre Shopify Plus', href: '#contacto' }}
+  />
+</LandingLayout>

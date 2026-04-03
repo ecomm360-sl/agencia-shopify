@@ -1,0 +1,127 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import ComparisonTable from '../../components/aeo/ComparisonTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [
+  { label: 'Agencia Shopify', href: '/shopify/' },
+  { label: 'Shopify Advanced' },
+];
+
+const faqs = [
+  { question: '¿Qué incluye Shopify Advanced que no tiene Shopify estándar?', answer: 'Shopify Advanced incluye informes personalizados avanzados, tarifas de envío calculadas por terceros, hasta 15 cuentas de personal, aranceles e impuestos de importación estimados, menor comisión por transacción (0.6% vs 1% del plan básico), y mayor cuota de API. Es el plan intermedio entre Shopify estándar y Plus.' },
+  { question: '¿Cuándo debería pasar de Shopify estándar a Advanced?', answer: 'Cuando tu tienda necesita informes avanzados para tomar decisiones de negocio, cuando vendes internacionalmente y necesitas gestionar aranceles e impuestos, cuando el volumen de transacciones justifica la menor comisión, o cuando tu equipo ha crecido y necesitas más cuentas de personal y permisos granulares.' },
+  { question: '¿Shopify Advanced o Shopify Plus?', answer: 'Advanced es para negocios en crecimiento que necesitan más capacidades analíticas y operativas. Plus es para empresas que necesitan personalización del checkout, B2B nativo, multi-store, Shopify Flow avanzado o un merchant success manager. Si tu principal necesidad es mejor reporting y gestión internacional, Advanced es suficiente. Si necesitas B2B o checkout custom, Plus es el camino.' },
+  { question: '¿Cuánto cuesta Shopify Advanced?', answer: 'Shopify Advanced cuesta 399 USD/mes (o menos con facturación anual). Es significativamente más barato que Shopify Plus (desde 2.300 USD/mes), lo que lo convierte en una opción atractiva para negocios que han superado el plan estándar pero no necesitan las capacidades enterprise de Plus.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Shopify Advanced',
+  provider: organization,
+  description: 'Implementación y optimización de tiendas Shopify Advanced para negocios en crecimiento. Informes avanzados, venta internacional y escalabilidad.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'Shopify Development',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Shopify Advanced — Para Negocios en Crecimiento"
+  description="Shopify Advanced para negocios que necesitan informes avanzados, venta internacional y menor comisión. Agencia especializada Shopify en España."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Shopify Advanced"
+    title="Shopify Advanced: el plan para negocios que están creciendo y necesitan más control."
+    subtitle="Cuando Shopify estándar se queda corto pero Plus es demasiado, Advanced ofrece informes avanzados, venta internacional optimizada y menores comisiones."
+    ctaPrimary={{ label: 'Consultar sobre Shopify Advanced', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="Shopify Advanced es el plan intermedio de Shopify diseñado para negocios en crecimiento que necesitan informes personalizados avanzados, gestión de aranceles e impuestos internacionales, menor comisión por transacción y mayor capacidad operativa. Es la opción adecuada cuando la tienda ha superado las capacidades del plan estándar pero no requiere las funcionalidades enterprise de Shopify Plus como B2B nativo o personalización del checkout."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Cuándo tiene sentido Shopify Advanced
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Shopify Advanced ocupa un espacio muy concreto: es el plan para negocios que <strong class="text-[#111714]">han superado la fase inicial</strong> y necesitan herramientas más potentes de análisis, mejor gestión de venta internacional y costes de transacción más competitivos.
+          </p>
+          <p>
+            Si tu tienda vende a varios países y necesitas gestionar aranceles e impuestos de importación, o si necesitas informes personalizados para tomar decisiones de negocio basadas en datos, Advanced es probablemente tu siguiente paso.
+          </p>
+          <p>
+            Si además necesitas B2B, checkout personalizado o multi-store, entonces tu camino es directamente <a href="/shopify/plus/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">Shopify Plus</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Tiendas con ventas internacionales que necesitan gestión de aranceles e impuestos.',
+      'Negocios que necesitan informes avanzados y personalizados para tomar decisiones.',
+      'Equipos en crecimiento que requieren más cuentas de personal con permisos granulares.',
+      'Tiendas con volumen suficiente para que la menor comisión por transacción compense.',
+    ]}
+    notSuitable={[
+      'Tiendas pequeñas donde Shopify estándar cubre todas las necesidades.',
+      'Empresas que necesitan B2B, multi-store o checkout personalizado (necesitan Plus).',
+      'Negocios que solo venden en un mercado sin complejidad fiscal internacional.',
+    ]}
+  />
+
+  <ComparisonTable
+    title="Shopify Advanced vs Shopify Plus"
+    thisLabel="Shopify Advanced"
+    otherLabel="Shopify Plus"
+    items={[
+      { label: 'Precio', thisOption: '399 USD/mes', otherOption: 'Desde 2.300 USD/mes' },
+      { label: 'Informes', thisOption: 'Informes personalizados avanzados', otherOption: 'Informes personalizados avanzados' },
+      { label: 'Checkout', thisOption: 'Personalización básica', otherOption: 'Checkout Extensibility completo' },
+      { label: 'B2B', thisOption: 'No disponible nativamente', otherOption: 'B2B nativo completo' },
+      { label: 'Multi-store', thisOption: '1 tienda', otherOption: 'Hasta 10 tiendas adicionales' },
+      { label: 'Automatización', thisOption: 'Shopify Flow básico', otherOption: 'Shopify Flow completo + Launchpad' },
+      { label: 'Venta internacional', thisOption: 'Aranceles e impuestos incluidos', otherOption: 'Aranceles, impuestos + mercados dedicados' },
+    ]}
+  />
+
+  <Methodology
+    title="Cómo trabajamos con Shopify Advanced"
+    steps={[
+      { step: '01', title: 'Evaluación', text: 'Analizamos si Advanced es el plan adecuado para tu negocio o si necesitas Plus. Te asesoramos sin presión comercial.' },
+      { step: '02', title: 'Configuración', text: 'Configuramos informes personalizados, mercados internacionales, aranceles y permisos de equipo.' },
+      { step: '03', title: 'Optimización', text: 'Optimizamos la tienda para aprovechar las capacidades de Advanced: reporting, internacional y conversión.' },
+      { step: '04', title: 'Crecimiento', text: 'Acompañamos el crecimiento y evaluamos el momento adecuado para un posible salto a Plus si el negocio lo requiere.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿No sabes si necesitas Advanced o Plus?"
+    subtitle="Te ayudamos a evaluar qué plan es el adecuado para tu negocio actual y tus objetivos de crecimiento."
+    ctaPrimary={{ label: 'Solicitar asesoramiento', href: '#contacto' }}
+  />
+</LandingLayout>

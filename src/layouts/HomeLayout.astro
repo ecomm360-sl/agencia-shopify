@@ -1,0 +1,21 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import SEOHead from '../components/seo/SEOHead.astro';
+import JsonLd from '../components/seo/JsonLd.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  jsonLd?: Record<string, unknown>[];
+}
+
+const { title, description, jsonLd = [] } = Astro.props;
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <SEOHead title={title} description={description} />
+    {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
+  </Fragment>
+  <slot />
+</BaseLayout>

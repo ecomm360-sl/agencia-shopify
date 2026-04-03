@@ -1,0 +1,133 @@
+---
+import Logo from './Logo.astro';
+import { mainNav, directNav } from '../../data/navigation';
+---
+
+<div class="fixed inset-x-0 top-0 z-50 px-4 pt-4 md:px-6">
+  <header class="mx-auto flex max-w-7xl items-center justify-between rounded-2xl border border-white/10 bg-[rgba(6,15,14,0.72)] px-4 py-3 shadow-[0_20px_80px_rgba(0,0,0,0.28)] backdrop-blur-xl md:px-6">
+    <Logo variant="dark" />
+
+    <nav class="hidden items-center gap-1 text-sm text-white/72 lg:flex" aria-label="Navegación principal">
+      {mainNav.map((group) => (
+        <div class="nav-dropdown relative">
+          <button
+            class="flex items-center gap-1 rounded-lg px-3 py-2 transition hover:text-white"
+            aria-expanded="false"
+            aria-haspopup="true"
+          >
+            {group.label}
+            <svg class="h-3.5 w-3.5 opacity-50" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+              <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+            </svg>
+          </button>
+          <div class="nav-dropdown-menu absolute left-0 top-full hidden pt-2">
+            <div class="min-w-[240px] rounded-xl border border-white/10 bg-[rgba(6,15,14,0.92)] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.4)] backdrop-blur-xl">
+              {group.items.map((item) => (
+                <a
+                  href={item.href}
+                  class="block rounded-lg px-3 py-2.5 transition hover:bg-white/8"
+                >
+                  <div class="text-sm font-medium text-white">{item.label}</div>
+                  {item.description && (
+                    <div class="mt-0.5 text-xs text-white/50">{item.description}</div>
+                  )}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ))}
+      {directNav.map((item) => (
+        <a class="rounded-lg px-3 py-2 transition hover:text-white" href={item.href}>
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <div class="flex items-center gap-3">
+      <a
+        href="/partner-shopify/"
+        class="hidden rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10 hover:text-white md:inline-flex"
+      >
+        Ver enfoque
+      </a>
+      <a
+        href="#contacto"
+        class="inline-flex rounded-full bg-[#7ECF4D] px-5 py-2.5 text-sm font-semibold text-[#08110D] shadow-[0_12px_30px_rgba(126,207,77,0.35)] transition hover:bg-[#95D66A]"
+      >
+        Hablemos
+      </a>
+
+      <!-- Mobile menu toggle -->
+      <button
+        class="flex h-10 w-10 items-center justify-center rounded-xl text-white/80 transition hover:bg-white/10 hover:text-white lg:hidden"
+        aria-label="Abrir menú"
+        id="mobile-menu-toggle"
+      >
+        <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+  </header>
+</div>
+
+<!-- Mobile menu -->
+<div id="mobile-menu" class="fixed inset-0 z-40 hidden">
+  <div class="absolute inset-0 bg-black/60 backdrop-blur-sm" id="mobile-menu-backdrop"></div>
+  <nav class="absolute right-0 top-0 h-full w-[300px] overflow-y-auto bg-[#071311] p-6 shadow-2xl" aria-label="Menú móvil">
+    <button class="mb-8 flex h-10 w-10 items-center justify-center rounded-xl text-white/80 transition hover:bg-white/10" id="mobile-menu-close" aria-label="Cerrar menú">
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+      </svg>
+    </button>
+    {mainNav.map((group) => (
+      <details class="group mb-4">
+        <summary class="flex cursor-pointer items-center justify-between rounded-lg px-3 py-2.5 text-sm font-medium text-white/80 transition hover:bg-white/8 hover:text-white">
+          {group.label}
+          <svg class="h-4 w-4 opacity-50 transition group-open:rotate-180" viewBox="0 0 20 20" fill="currentColor">
+            <path fill-rule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 11.168l3.71-3.938a.75.75 0 111.08 1.04l-4.25 4.5a.75.75 0 01-1.08 0l-4.25-4.5a.75.75 0 01.02-1.06z" clip-rule="evenodd" />
+          </svg>
+        </summary>
+        <div class="mt-1 space-y-1 pl-3">
+          {group.items.map((item) => (
+            <a href={item.href} class="block rounded-lg px-3 py-2 text-sm text-white/60 transition hover:bg-white/8 hover:text-white">
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </details>
+    ))}
+    {directNav.map((item) => (
+      <a href={item.href} class="block rounded-lg px-3 py-2.5 text-sm font-medium text-white/80 transition hover:bg-white/8 hover:text-white">
+        {item.label}
+      </a>
+    ))}
+    <div class="mt-8 space-y-3">
+      <a href="#contacto" class="block rounded-full bg-[#7ECF4D] px-5 py-3 text-center text-sm font-semibold text-[#08110D] shadow-[0_12px_30px_rgba(126,207,77,0.35)] transition hover:bg-[#95D66A]">
+        Hablemos
+      </a>
+    </div>
+  </nav>
+</div>
+
+<style>
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: block;
+  }
+</style>
+
+<script>
+  const toggle = document.getElementById('mobile-menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const close = document.getElementById('mobile-menu-close');
+  const backdrop = document.getElementById('mobile-menu-backdrop');
+
+  function openMenu() { menu?.classList.remove('hidden'); document.body.style.overflow = 'hidden'; }
+  function closeMenu() { menu?.classList.add('hidden'); document.body.style.overflow = ''; }
+
+  toggle?.addEventListener('click', openMenu);
+  close?.addEventListener('click', closeMenu);
+  backdrop?.addEventListener('click', closeMenu);
+</script>

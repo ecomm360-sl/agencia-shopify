@@ -1,0 +1,71 @@
+---
+interface Props {
+  badge?: string;
+  title: string;
+  subtitle: string;
+  ctaPrimary?: { label: string; href: string };
+  ctaSecondary?: { label: string; href: string };
+}
+
+const {
+  badge = 'Próximo paso',
+  title,
+  subtitle,
+  ctaPrimary = { label: 'Solicitar propuesta', href: '#contacto' },
+  ctaSecondary,
+} = Astro.props;
+---
+
+<section id="contacto" class="relative overflow-hidden bg-[#071311] py-24 md:py-28">
+  <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(126,207,77,0.16),transparent_28%)]"></div>
+  <div class="container relative z-10">
+    <div class="grid gap-10 rounded-[2.25rem] border border-white/10 bg-white/6 p-8 shadow-[0_30px_120px_rgba(0,0,0,0.32)] backdrop-blur-2xl md:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+      <div>
+        <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-[#A7EA7A]">
+          <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
+          {badge}
+        </div>
+        <h2 class="mt-6 max-w-2xl text-balance text-4xl font-extrabold tracking-[-0.06em] text-white md:text-5xl">
+          {title}
+        </h2>
+        <p class="mt-6 max-w-2xl text-lg leading-8 text-white/70">
+          {subtitle}
+        </p>
+      </div>
+
+      <div class="grid gap-4 rounded-[1.8rem] bg-[rgba(243,247,240,0.06)] p-5 ring-1 ring-white/10">
+        <div class="flex items-center gap-4 rounded-[1.4rem] border border-white/10 bg-black/12 p-4">
+          <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7ECF4D]/18">
+            <svg viewBox="0 0 84 84" class="h-10 w-10" aria-hidden="true">
+              <defs>
+                <linearGradient id="cta-front" x1="20" y1="18" x2="45" y2="60">
+                  <stop offset="0" stop-color="#95D66A" />
+                  <stop offset="1" stop-color="#62A83B" />
+                </linearGradient>
+                <linearGradient id="cta-side" x1="48" y1="22" x2="61" y2="66">
+                  <stop offset="0" stop-color="#548C36" />
+                  <stop offset="1" stop-color="#376A21" />
+                </linearGradient>
+              </defs>
+              <path d="M33 24L51 18L58 61L40 66L33 24Z" fill="url(#cta-side)" />
+              <path d="M24 25L47 18L51 18L40 66L18 58L24 25Z" fill="url(#cta-front)" />
+              <path d="M34 15C35 10 39 7 43 7C48 7 51 10 52 15" stroke="#9CDC70" stroke-width="3.5" stroke-linecap="round" />
+            </svg>
+          </div>
+          <div>
+            <div class="text-base font-semibold text-white">Agencia Shopify</div>
+            <div class="mt-1 text-sm text-white/62">Identidad lista para convertirse en sistema web completo.</div>
+          </div>
+        </div>
+        <a href={ctaPrimary.href} class="block rounded-full bg-[#7ECF4D] py-4 text-center text-base font-semibold text-[#08110D] shadow-[0_16px_40px_rgba(126,207,77,0.34)] transition hover:bg-[#95D66A]">
+          {ctaPrimary.label}
+        </a>
+        {ctaSecondary && (
+          <a href={ctaSecondary.href} class="block rounded-full border border-white/14 bg-white/5 py-4 text-center text-base text-white transition hover:bg-white/10 hover:text-white">
+            {ctaSecondary.label}
+          </a>
+        )}
+      </div>
+    </div>
+  </div>
+</section>

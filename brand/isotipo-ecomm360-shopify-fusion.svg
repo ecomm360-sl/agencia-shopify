@@ -1,0 +1,44 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="ring" x1="70" y1="70" x2="430" y2="430" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#CFEA7A"/>
+      <stop offset="1" stop-color="#7CC244"/>
+    </linearGradient>
+    <linearGradient id="bagFront" x1="160" y1="120" x2="284" y2="388" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#A8D95C"/>
+      <stop offset="1" stop-color="#7CC244"/>
+    </linearGradient>
+    <linearGradient id="bagSide" x1="282" y1="156" x2="356" y2="384" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#5E9B3F"/>
+      <stop offset="1" stop-color="#3F6F2C"/>
+    </linearGradient>
+    <filter id="softShadow" x="52" y="52" width="408" height="408" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="18"/>
+      <feGaussianBlur stdDeviation="18"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0862745 0 0 0 0 0.141176 0 0 0 0 0.117647 0 0 0 0.2 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+
+  <rect width="512" height="512" rx="96" fill="white"/>
+
+  <g filter="url(#softShadow)">
+    <circle cx="256" cy="256" r="172" stroke="url(#ring)" stroke-width="20"/>
+    <rect x="246" y="60" width="20" height="44" rx="10" fill="url(#ring)"/>
+    <rect x="246" y="408" width="20" height="44" rx="10" fill="url(#ring)"/>
+    <rect x="60" y="246" width="44" height="20" rx="10" fill="url(#ring)"/>
+    <rect x="408" y="246" width="44" height="20" rx="10" fill="url(#ring)"/>
+
+    <g transform="translate(132 118) rotate(-6 108 124)">
+      <path d="M50 76C50 42.8629 76.8629 16 110 16C143.137 16 170 42.8629 170 76" stroke="#7CC244" stroke-width="16" stroke-linecap="round"/>
+      <path d="M92 76C92 52.2518 111.252 33 135 33C158.748 33 178 52.2518 178 76" stroke="#7CC244" stroke-width="16" stroke-linecap="round"/>
+      <path d="M38 88L182 60L218 90L206 292L70 312L38 88Z" fill="url(#bagFront)"/>
+      <path d="M182 60L246 112L234 312L206 292L218 90L182 60Z" fill="url(#bagSide)"/>
+      <path d="M112 138L168 168L128 180L140 236L110 222L98 180L66 198L80 152L112 138Z" fill="white" opacity="0.98"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,44 @@
+---
+interface ComparisonItem {
+  label: string;
+  thisOption: string;
+  otherOption: string;
+}
+
+interface Props {
+  title: string;
+  thisLabel: string;
+  otherLabel: string;
+  items: ComparisonItem[];
+}
+
+const { title, thisLabel, otherLabel, items } = Astro.props;
+---
+
+<section id="comparativa" class="bg-white py-16 md:py-20">
+  <div class="container">
+    <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+      {title}
+    </h2>
+    <div class="mt-8 overflow-x-auto">
+      <table class="w-full min-w-[500px] text-left">
+        <thead>
+          <tr class="border-b border-[#d7e5d3]">
+            <th class="py-4 pr-4 text-sm font-semibold text-[#617069]">Aspecto</th>
+            <th class="py-4 pr-4 text-sm font-semibold text-[#376A21]">{thisLabel}</th>
+            <th class="py-4 text-sm font-semibold text-[#617069]">{otherLabel}</th>
+          </tr>
+        </thead>
+        <tbody>
+          {items.map((item) => (
+            <tr class="border-b border-[#f0f4ed]">
+              <td class="py-4 pr-4 text-sm font-medium text-[#111714]">{item.label}</td>
+              <td class="py-4 pr-4 text-sm text-[#24312b]">{item.thisOption}</td>
+              <td class="py-4 text-sm text-[#617069]">{item.otherOption}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>

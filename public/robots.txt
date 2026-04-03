@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://agencia-shopify.com/sitemap-index.xml

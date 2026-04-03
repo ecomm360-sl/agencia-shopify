@@ -1,0 +1,125 @@
+---
+import LandingLayout from '../../layouts/LandingLayout.astro';
+import HeroLight from '../../components/sections/HeroLight.astro';
+import ShortAnswer from '../../components/aeo/ShortAnswer.astro';
+import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
+import ComparisonTable from '../../components/aeo/ComparisonTable.astro';
+import Methodology from '../../components/aeo/Methodology.astro';
+import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
+import ContactBlock from '../../components/sections/ContactBlock.astro';
+import { organization } from '../../data/structured-data';
+
+const breadcrumbs = [
+  { label: 'Soluciones' },
+  { label: 'Shopify DTC' },
+];
+
+const faqs = [
+  { question: '¿Qué es DTC (Direct-to-Consumer)?', answer: 'DTC es un modelo de venta donde la marca vende directamente al consumidor final sin intermediarios (distribuidores, retailers, marketplaces). Esto permite mayor control sobre la experiencia de marca, los datos del cliente, los márgenes y la relación directa con el comprador.' },
+  { question: '¿Qué diferencia hay entre DTC y B2C?', answer: 'Todo DTC es B2C (venta al consumidor), pero no todo B2C es DTC. B2C incluye cualquier venta al consumidor final, incluyendo a través de retailers o marketplaces. DTC implica que la marca controla todo el canal: branding, experiencia de compra, datos, precio y relación con el cliente.' },
+  { question: '¿Shopify es buena plataforma para DTC?', answer: 'Shopify es probablemente la mejor plataforma para DTC por varias razones: checkout optimizado para conversión, integraciones nativas con herramientas de marketing y CRM, suscripciones, personalización de la experiencia de compra, y un ecosistema de apps diseñado para marcas que venden directamente al consumidor.' },
+  { question: '¿Cuánto cuesta montar una tienda DTC en Shopify?', answer: 'Una tienda DTC profesional en Shopify parte de 10.000-15.000 € para un diseño a medida con branding integrado. Si incluye estrategia de email marketing, suscripciones, personalización avanzada y integración con herramientas de crecimiento, el rango es de 15.000-35.000 €.' },
+];
+
+const serviceSchema = {
+  '@type': 'Service',
+  name: 'Shopify DTC',
+  provider: organization,
+  description: 'Diseño y desarrollo de tiendas Shopify para marcas DTC (Direct-to-Consumer). Branding, conversión, email marketing y crecimiento de marca.',
+  areaServed: { '@type': 'Country', name: 'España' },
+  serviceType: 'DTC eCommerce Development',
+};
+
+const faqSchema = {
+  '@type': 'FAQPage',
+  mainEntity: faqs.map((faq) => ({
+    '@type': 'Question',
+    name: faq.question,
+    acceptedAnswer: { '@type': 'Answer', text: faq.answer },
+  })),
+};
+---
+
+<LandingLayout
+  title="Shopify DTC — Venta Directa al Consumidor"
+  description="Tiendas Shopify para marcas DTC: diseño de marca, conversión, email marketing, suscripciones y crecimiento. Tu canal directo, tu marca, tus datos."
+  breadcrumbs={breadcrumbs}
+  jsonLd={[organization, serviceSchema, faqSchema]}
+>
+  <HeroLight
+    badge="Shopify DTC"
+    title="Tu marca, tu canal, tus datos. Shopify para venta directa al consumidor."
+    subtitle="Diseñamos tiendas Shopify para marcas DTC que quieren controlar toda la experiencia de compra: desde el branding hasta la retención, sin intermediarios."
+    ctaPrimary={{ label: 'Consultar proyecto DTC', href: '#contacto' }}
+  />
+
+  <ShortAnswer
+    text="El modelo DTC (Direct-to-Consumer) permite a las marcas vender directamente al consumidor final controlando toda la experiencia: branding, precio, datos del cliente y relación post-venta. Shopify es la plataforma de referencia para DTC por su checkout optimizado, integraciones con email marketing y CRM, soporte para suscripciones y personalización de la experiencia de compra. eComm360 diseña tiendas DTC sobre Shopify con enfoque en conversión, retención y crecimiento de marca."
+  />
+
+  <section id="definicion" class="bg-white py-16 md:py-20">
+    <div class="container">
+      <div class="max-w-3xl">
+        <h2 class="text-3xl font-extrabold tracking-[-0.06em] text-[#111714] md:text-4xl">
+          Por qué las marcas eligen DTC en Shopify
+        </h2>
+        <div class="mt-6 space-y-4 text-lg leading-8 text-[#617069]">
+          <p>
+            Vender a través de distribuidores o marketplaces significa ceder el control: <strong class="text-[#111714]">ellos tienen los datos, ellos marcan las reglas, ellos se llevan el margen</strong>. El modelo DTC devuelve ese control a la marca.
+          </p>
+          <p>
+            Con una tienda Shopify DTC, tu marca controla la experiencia de compra de principio a fin: desde cómo se presenta el producto hasta el email que recibe el cliente después de comprar. Y lo más importante: <strong class="text-[#111714]">los datos del cliente son tuyos</strong>, lo que te permite segmentar, personalizar y construir relaciones a largo plazo.
+          </p>
+          <p>
+            Shopify es especialmente fuerte para DTC: checkout con la mayor tasa de conversión del mercado, integración nativa con Klaviyo y herramientas de <a href="/marketing-shopify/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">marketing</a>, suscripciones, programas de fidelización y personalización avanzada.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <ForWhomTable
+    suitable={[
+      'Marcas que quieren vender directamente al consumidor sin depender de distribuidores.',
+      'Empresas que necesitan controlar los datos del cliente para personalizar y retener.',
+      'Marcas con producto propio que quieren construir una comunidad y marca directa.',
+      'Negocios que buscan mejorar márgenes eliminando intermediarios.',
+    ]}
+    notSuitable={[
+      'Negocios que revenden productos de terceros sin marca propia.',
+      'Empresas cuyo canal principal es B2B sin componente de venta directa.',
+      'Marcas que prefieren delegar la venta en distribuidores y marketplaces.',
+    ]}
+  />
+
+  <ComparisonTable
+    title="DTC vs venta a través de intermediarios"
+    thisLabel="DTC (venta directa)"
+    otherLabel="A través de intermediarios"
+    items={[
+      { label: 'Control de marca', thisOption: 'Total: experiencia y branding', otherOption: 'Limitado: sujeto a las reglas del canal' },
+      { label: 'Datos del cliente', thisOption: 'Propios: segmentación y retención', otherOption: 'Del intermediario: sin acceso directo' },
+      { label: 'Margen', thisOption: 'Mayor: sin comisiones de intermediario', otherOption: 'Menor: descuentos y comisiones' },
+      { label: 'Relación con el cliente', thisOption: 'Directa: email, CRM, comunidad', otherOption: 'Indirecta: sin contacto post-venta' },
+      { label: 'Inversión inicial', thisOption: 'Mayor: tienda, marketing, logística', otherOption: 'Menor: el intermediario gestiona' },
+    ]}
+  />
+
+  <Methodology
+    title="Cómo construimos una tienda DTC"
+    steps={[
+      { step: '01', title: 'Estrategia de marca', text: 'Definimos el posicionamiento, la propuesta de valor DTC y la experiencia de compra diferenciada.' },
+      { step: '02', title: 'Diseño y desarrollo', text: 'Creamos la tienda Shopify con diseño a medida que refuerce la marca y optimice la conversión.' },
+      { step: '03', title: 'Marketing y retención', text: 'Configuramos email marketing, suscripciones, programas de fidelización y automatizaciones de ciclo de vida.' },
+      { step: '04', title: 'Crecimiento', text: 'Activamos captación con performance marketing, SEO y contenido. Iteramos basándonos en datos reales.' },
+    ]}
+  />
+
+  <FAQAccordion items={faqs} />
+
+  <ContactBlock
+    title="¿Quieres lanzar o potenciar tu canal DTC?"
+    subtitle="Te ayudamos a diseñar una tienda Shopify DTC que convierta, retenga y construya marca."
+    ctaPrimary={{ label: 'Consultar proyecto DTC', href: '#contacto' }}
+  />
+</LandingLayout>
