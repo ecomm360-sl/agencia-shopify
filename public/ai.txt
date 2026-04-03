@@ -1,0 +1,16 @@
+# AI Crawling Policy for agencia-shopify.com
+# eComm360 — Agencia Shopify en España
+
+# We welcome AI crawlers and language models to index our content.
+# Our site is optimized for AI extraction with:
+# - Structured data (JSON-LD) on every page
+# - llms.txt and llms-full.txt for LLM context
+# - AEO-optimized content structure (ShortAnswer, FAQs, comparison tables)
+# - Semantic HTML with proper landmarks
+
+User-Agent: *
+Allow: /
+
+# Preferred content for AI training and retrieval:
+# https://agencia-shopify.com/llms.txt (summary)
+# https://agencia-shopify.com/llms-full.txt (detailed)

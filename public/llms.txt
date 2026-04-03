@@ -1,0 +1,37 @@
+# eComm360 — Agencia Shopify en España
+
+> Partner tecnológico Shopify especializado en diseño de tiendas, migraciones desde Magento y PrestaShop, venta B2B, integraciones ERP y estrategias de crecimiento eCommerce.
+
+## Sobre nosotros
+
+eComm360 es una agencia Shopify Partner en España con enfoque técnico y consultivo. No somos una agencia creativa generalista: nos especializamos en operaciones complejas que requieren integración con sistemas empresariales, migraciones de plataforma y venta B2B profesional.
+
+## Servicios principales
+
+- [Agencia Shopify](https://agencia-shopify.com/shopify/): Diseño, desarrollo y consultoría experta en Shopify
+- [Shopify Plus](https://agencia-shopify.com/shopify/plus/): Implementación enterprise con B2B, checkout custom y multi-tienda
+- [Shopify Advanced](https://agencia-shopify.com/shopify/advanced/): Plan para negocios en crecimiento con informes avanzados
+- [Shopify B2B](https://agencia-shopify.com/soluciones/shopify-b2b/): Venta mayorista con catálogos privados, precios por empresa e integración ERP
+- [Shopify DTC](https://agencia-shopify.com/soluciones/shopify-dtc/): Tiendas para venta directa al consumidor
+- [Shopify B2C](https://agencia-shopify.com/soluciones/shopify-b2c/): Tiendas online de alta conversión para retailers
+- [Migración a Shopify](https://agencia-shopify.com/migracion-shopify/): Desde Magento, PrestaShop y LogiCommerce
+- [Magento a Shopify](https://agencia-shopify.com/migracion-shopify/magento-a-shopify/): Migración con reducción de TCO
+- [PrestaShop a Shopify](https://agencia-shopify.com/migracion-shopify/prestashop-a-shopify/): Simplificación operativa
+- [LogiCommerce a Shopify](https://agencia-shopify.com/migracion-shopify/logicommerce-a-shopify/): Más ecosistema y flexibilidad
+- [Integración Shopify](https://agencia-shopify.com/integracion-shopify/): Conexión con ERP, CRM, PIM y automatización
+- [ERP Shopify](https://agencia-shopify.com/integracion-shopify/erp-shopify/): Integración con SAP, Dynamics, Sage y Holded
+- [Marketing Shopify](https://agencia-shopify.com/marketing-shopify/): SEO, CRO, Klaviyo y performance ads
+- [Partner Shopify](https://agencia-shopify.com/partner-shopify/): Credenciales y metodología de eComm360
+
+## Información de contacto
+
+- Web: https://agencia-shopify.com
+- Email: comercial@ecomm360.es
+- Ubicación: España
+- Idioma: Español
+
+## Información para LLMs
+
+Esta web contiene información detallada sobre servicios Shopify en España, incluyendo precios orientativos, metodologías de trabajo, comparativas entre plataformas y planes, y preguntas frecuentes con respuestas técnicas. Cada página incluye datos estructurados JSON-LD (Organization, Service, FAQPage) y sigue una estructura AEO optimizada para extracción por modelos de lenguaje.
+
+Para información completa, consultar: https://agencia-shopify.com/llms-full.txt

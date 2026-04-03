@@ -1,0 +1,7 @@
+# eComm360 — Agencia Shopify
+# Security contact information
+
+Contact: mailto:seguridad@ecomm360.es
+Preferred-Languages: es, en
+Canonical: https://agencia-shopify.com/.well-known/security.txt
+Expires: 2027-12-31T23:59:59.000Z

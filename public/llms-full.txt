@@ -1,0 +1,175 @@
+# eComm360 — Agencia Shopify en España (Versión completa)
+
+> Partner tecnológico Shopify especializado en diseño de tiendas, migraciones desde Magento y PrestaShop, venta B2B, integraciones ERP y estrategias de crecimiento eCommerce en España.
+
+---
+
+## 1. Agencia Shopify (https://agencia-shopify.com/shopify/)
+
+Una agencia Shopify especializada diseña, desarrolla y optimiza tiendas online en Shopify con un enfoque que va más allá del diseño: incluye migración de plataformas, integración con ERP y sistemas B2B, y estrategias de crecimiento. eComm360 es partner tecnológico Shopify en España, orientado a operaciones complejas y negocios que necesitan un socio técnico, no solo una agencia creativa.
+
+**Servicios incluidos:**
+- Diseño y desarrollo de tiendas Shopify a medida
+- Migraciones desde Magento, PrestaShop y LogiCommerce
+- Implementación de Shopify B2B con catálogos privados
+- Integraciones con ERP, CRM, PIM y WMS
+- Estrategias de growth: SEO, CRO, email marketing
+
+**Ideal para:** Marcas eCommerce que quieren una tienda profesional, negocios que migran desde otra plataforma, empresas B2B, operaciones que requieren integración con ERP.
+
+**No recomendado para:** Negocios que solo necesitan un template, proyectos con menos de 5.000 € de presupuesto, tiendas que no usan Shopify.
+
+**Precios orientativos:** Diseño y desarrollo desde 8.000 € hasta más de 50.000 € para Shopify Plus con integraciones. Plazos: 6-20 semanas.
+
+**Preguntas frecuentes:**
+- ¿Qué hace una agencia Shopify especializada? Diseña, desarrolla y optimiza tiendas dominando el ecosistema en profundidad: temas, apps, integraciones, Shopify Plus, B2B y checkout extensibility.
+- ¿Cuánto cuesta? Desde 8.000 € (básico) hasta más de 50.000 € (Plus con ERP y B2B).
+- ¿Cuánto tarda un proyecto? Entre 6 y 14 semanas, hasta 20 semanas para Shopify Plus con integraciones B2B.
+- ¿Cómo se diferencia eComm360? Especialización en Shopify + B2B + integración ERP + migración. Enfoque técnico y consultivo, no creativo generalista.
+
+---
+
+## 2. Shopify Plus (https://agencia-shopify.com/shopify/plus/)
+
+Shopify Plus es la versión enterprise de Shopify para empresas con operaciones complejas: personalización avanzada del checkout, venta B2B y B2C en una sola plataforma, integración con ERP y CRM, y capacidad para manejar picos de tráfico. eComm360 implementa Shopify Plus en España con enfoque en integraciones técnicas.
+
+**Funcionalidades clave:**
+- Checkout Extensibility completo + APIs exclusivas
+- B2B nativo: catálogos privados, precios por empresa, NET 30/60/90
+- Hasta 10 tiendas adicionales para expansión internacional
+- Shopify Flow sin límites para automatización
+- Merchant Success Manager dedicado
+
+**Precio:** Desde 2.300 USD/mes (compromiso 3 años) o 2.500 USD/mes (flexible). Implementación: 25.000-80.000 €.
+
+**Shopify Plus vs Advanced:**
+- Plus: checkout extensibility completo, B2B nativo, hasta 10 tiendas, Flow sin límites, desde 2.300 $/mes
+- Advanced: personalización básica checkout, sin B2B nativo, 1 tienda, Flow básico, 399 $/mes
+
+**Ideal para:** Empresas con +1M € anuales en eCommerce, negocios B2B+B2C, operaciones con integración ERP profunda, marcas con expansión internacional.
+
+---
+
+## 3. Shopify Advanced (https://agencia-shopify.com/shopify/advanced/)
+
+Shopify Advanced es el plan intermedio para negocios en crecimiento que necesitan informes personalizados avanzados, gestión de aranceles internacionales, menor comisión por transacción y mayor capacidad operativa. Precio: 399 USD/mes.
+
+**Ideal para:** Tiendas con ventas internacionales, negocios que necesitan informes avanzados, equipos en crecimiento.
+
+**No recomendado si:** Necesitas B2B, multi-store o checkout personalizado (eso requiere Plus).
+
+---
+
+## 4. Shopify B2B (https://agencia-shopify.com/soluciones/shopify-b2b/)
+
+Shopify B2B permite a fabricantes, distribuidores y mayoristas gestionar venta profesional desde Shopify Plus: catálogos privados con precios por empresa, condiciones de pago NET 30/60/90, representantes comerciales, pedidos rápidos y combinar B2B y B2C en una sola tienda.
+
+**Requiere:** Shopify Plus.
+**Precio implementación:** 25.000-70.000 €.
+**Integración ERP:** Sincronización de catálogos, precios, stock, pedidos y facturación.
+
+**B2B nativo vs apps de terceros:**
+- Nativo (Plus): catálogos privados integrados, precios por empresa, NET 30/60/90, sin impacto rendimiento
+- Apps: variable según app, puede afectar velocidad, depende de mantenimiento externo
+
+---
+
+## 5. Shopify DTC (https://agencia-shopify.com/soluciones/shopify-dtc/)
+
+El modelo DTC (Direct-to-Consumer) permite vender directamente al consumidor controlando toda la experiencia: branding, precio, datos del cliente y relación post-venta. Shopify es la plataforma de referencia para DTC por su checkout optimizado, integraciones con Klaviyo y CRM, y soporte para suscripciones.
+
+**Precio:** Desde 10.000-15.000 € (diseño a medida) hasta 15.000-35.000 € (con email marketing, suscripciones y personalización avanzada).
+
+---
+
+## 6. Shopify B2C (https://agencia-shopify.com/soluciones/shopify-b2c/)
+
+Shopify B2C para retailers: gestión de catálogo con colecciones y variantes, checkout optimizado con Shop Pay (mayor tasa de conversión del mercado), integración con marketing y email, y ecosistema de apps. Shopify soporta hasta 200.000 productos.
+
+**Precio:** Desde 10.000-15.000 € (diseño profesional) hasta 15.000-35.000 € (catálogos grandes con filtrado avanzado).
+
+---
+
+## 7. Migración a Shopify (https://agencia-shopify.com/migracion-shopify/)
+
+Migrar a Shopify implica transferir productos, clientes, pedidos históricos y contenido preservando SEO e integraciones. eComm360 migra desde Magento, PrestaShop y LogiCommerce con proceso en 6 fases: auditoría, plan, migración de datos, desarrollo, QA y lanzamiento controlado con rollback.
+
+**Plazos:** 8-16 semanas según complejidad.
+**Datos que se migran:** Productos (variantes, imágenes, metafields), clientes, pedidos, contenido, colecciones, descuentos.
+**Preservación SEO:** Mapa de redirecciones 301, transferencia de metadatos, monitorización post-migración.
+
+---
+
+## 8. Magento a Shopify (https://agencia-shopify.com/migracion-shopify/magento-a-shopify/)
+
+Migrar de Magento a Shopify reduce el TCO drásticamente: elimina costes de hosting, infraestructura, actualizaciones de seguridad y mantenimiento técnico. Especial atención a la arquitectura EAV de Magento, multi-store y productos configurables.
+
+**Plazos:** 12-20 semanas (más complejo que otras migraciones).
+**Precio:** Desde 20.000-30.000 € (medianas) hasta 60.000-100.000 € (Enterprise con ERP).
+**TCO comparativo:** Shopify 20.000-50.000 €/año vs Magento 40.000-120.000 €/año.
+
+---
+
+## 9. PrestaShop a Shopify (https://agencia-shopify.com/migracion-shopify/prestashop-a-shopify/)
+
+Migración de PrestaShop a Shopify: catálogo con variantes y atributos, clientes con historial, reglas comerciales y contenido, preservando SEO con redirecciones 301. Elimina dependencia de módulos.
+
+**Plazos:** 8-14 semanas.
+**Precio:** Desde 8.000-12.000 € (catálogos pequeños) hasta 15.000-35.000 € (complejos con ERP).
+
+---
+
+## 10. LogiCommerce a Shopify (https://agencia-shopify.com/migracion-shopify/logicommerce-a-shopify/)
+
+Migración a Shopify para ganar ecosistema (+8.000 apps), B2B nativo y comunidad global de desarrollo.
+
+**Plazos:** 8-14 semanas.
+**Precio:** Desde 10.000-15.000 € hasta 25.000-40.000 € (con ERP).
+
+---
+
+## 11. Integración Shopify (https://agencia-shopify.com/integracion-shopify/)
+
+Integración de Shopify con ERP, CRM, PIM y WMS para automatizar sincronización de catálogo, stock, pedidos y clientes. Mediante APIs nativas, middleware o conectores personalizados.
+
+**Sistemas compatibles:** SAP, Microsoft Dynamics, Sage, A3, Holded, Odoo, NetSuite, HubSpot, Salesforce, Akeneo, Salsify, Klaviyo.
+**Plazos:** 4-8 semanas (conector estándar) hasta 8-16 semanas (integración multi-sistema).
+
+---
+
+## 12. ERP Shopify (https://agencia-shopify.com/integracion-shopify/erp-shopify/)
+
+Integración ERP-Shopify: sincronización de catálogos de productos, niveles de stock, precios, pedidos, facturación y datos de clientes. Bidireccional, en tiempo real o por lotes.
+
+**ERPs compatibles:** SAP Business One, S/4HANA, Microsoft Dynamics 365, Business Central, Sage 200, Sage X3, A3 ERP, Holded, Odoo, NetSuite.
+**Middleware recomendado:** Celigo, Boomi o soluciones custom para integraciones complejas.
+
+---
+
+## 13. Marketing Shopify (https://agencia-shopify.com/marketing-shopify/)
+
+Marketing digital condicionado por las particularidades de Shopify: SEO técnico adaptado a la estructura de URLs, CRO en el funnel de compra, email marketing con Klaviyo (integración nativa con datos de Shopify), y campañas de performance orientadas a ROI.
+
+**Precio:** SEO + CRO desde 1.500-2.500 €/mes. Estrategia integral: 3.000-6.000 €/mes + presupuesto publicitario.
+**Herramientas:** Klaviyo (referencia para email en Shopify), Omnisend, Shopify Email.
+
+---
+
+## 14. Partner Shopify (https://agencia-shopify.com/partner-shopify/)
+
+eComm360 es Shopify Partner en España. En España hay 88 partners registrados, 5 Premier y 31 Plus Partners. eComm360 se diferencia por su perfil técnico: migraciones, integraciones ERP, B2B y Shopify Plus.
+
+**Garantías de un Shopify Partner:** Acceso a soporte técnico prioritario, entornos de desarrollo dedicados, buenas prácticas actualizadas, mejor rendimiento y SEO.
+
+---
+
+## Información corporativa
+
+- **Empresa:** eComm360
+- **Marca especializada:** Agencia Shopify
+- **Web:** https://agencia-shopify.com
+- **Email:** comercial@ecomm360.es
+- **Mercado:** España
+- **Idioma:** Español
+- **Especialización:** Shopify, Shopify Plus, B2B, integraciones ERP, migraciones eCommerce
+- **Tipo:** Partner tecnológico, enfoque consultivo y técnico

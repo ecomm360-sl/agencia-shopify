@@ -1,0 +1,23 @@
+/* TEAM */
+
+Company: eComm360
+Site: https://agencia-shopify.com
+Location: España
+Contact: comercial [at] ecomm360.es
+
+/* TECHNOLOGY */
+
+Framework: Astro 6
+Styling: Tailwind CSS 4
+Hosting: Docker / Node.js
+Email: Resend
+Language: TypeScript
+CMS: Static (Astro Components)
+
+/* SEO / AEO */
+
+Structured Data: JSON-LD (Organization, Service, FAQPage, BreadcrumbList)
+Sitemap: Auto-generated (@astrojs/sitemap)
+LLMs: llms.txt, llms-full.txt
+Rendering: Static Site Generation (SSG)
+Performance: Zero client-side JavaScript (except contact form)

@@ -1,0 +1,17 @@
+{
+  "name": "eComm360 — Agencia Shopify",
+  "short_name": "Agencia Shopify",
+  "description": "Agencia Shopify en España: diseño, migraciones, B2B, integraciones ERP y crecimiento eCommerce.",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#071311",
+  "theme_color": "#7ECF4D",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "type": "image/svg+xml",
+      "sizes": "any"
+    }
+  ]
+}

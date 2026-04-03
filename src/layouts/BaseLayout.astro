@@ -11,13 +11,18 @@ const { class: className } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="es">
+<html lang="es" dir="ltr">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Fonts -->
+    <!-- Favicon & App -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <meta name="theme-color" content="#7ECF4D" />
+    <meta name="msapplication-TileColor" content="#071311" />
+
+    <!-- Preconnect & Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -25,12 +30,21 @@ const { class: className } = Astro.props;
       rel="stylesheet"
     />
 
-    <!-- SEO head slot -->
+    <!-- Author & Geo -->
+    <meta name="author" content="eComm360" />
+    <meta name="geo.region" content="ES" />
+    <meta name="geo.placename" content="España" />
+    <link rel="author" href="/humans.txt" />
+
+    <!-- SEO head slot (title, meta, OG, JSON-LD per page) -->
     <slot name="head" />
   </head>
   <body class:list={["min-h-screen bg-background text-foreground", className]}>
+    <a href="#main-content" class="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:rounded-lg focus:bg-[#7ECF4D] focus:px-4 focus:py-2 focus:text-[#08110D] focus:font-semibold">
+      Saltar al contenido
+    </a>
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer />

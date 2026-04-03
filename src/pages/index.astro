@@ -7,7 +7,7 @@ import FeatureGrid from '../components/sections/FeatureGrid.astro';
 import ProcessSteps from '../components/sections/ProcessSteps.astro';
 import ImageTextSplit from '../components/sections/ImageTextSplit.astro';
 import ContactBlock from '../components/sections/ContactBlock.astro';
-import { organization, localBusiness, website } from '../data/structured-data';
+import { organization, localBusiness, website, siteNavigationElement } from '../data/structured-data';
 
 const heroImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663029235023/WaDSDERYgyrciiNP9nwSFK/agencia-shopify-hero-dark-commerce-9SzChkfKgqSmNrCY3f9EKi.webp';
 const abstractImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663029235023/WaDSDERYgyrciiNP9nwSFK/agencia-shopify-abstract-growth-VsaAhSxy2j4bovCREU6RS9.webp';
@@ -21,7 +21,7 @@ const collageImage = 'https://d2xsxph8kpxj0f.cloudfront.net/310419663029235023/W
   ogDescription="Diseñamos, migramos y escalamos tiendas Shopify. Especialistas en B2B, integraciones ERP y crecimiento eCommerce en España."
   ogImage="https://agencia-shopify.com/og/home.png"
   keywords="agencia shopify, agencia shopify españa, shopify partner españa, diseño shopify, migración shopify, shopify b2b, integración erp shopify"
-  jsonLd={[organization, localBusiness, website]}
+  jsonLd={[organization, localBusiness, website, siteNavigationElement]}
 >
   <HeroDark
     badge="Especialistas en diseño, migración y crecimiento en Shopify"

@@ -7,7 +7,39 @@ export default defineConfig({
   site: 'https://agencia-shopify.com',
   output: 'static',
   adapter: node({ mode: 'standalone' }),
-  integrations: [sitemap()],
+  integrations: [
+    sitemap({
+      filter: (page) => !page.includes('/api/'),
+      changefreq: 'weekly',
+      lastmod: new Date(),
+      priority: 0.7,
+      serialize(item) {
+        // Custom priorities by URL
+        const priorities = {
+          '/': 1.0,
+          '/shopify/': 0.9,
+          '/shopify/plus/': 0.9,
+          '/migracion-shopify/': 0.9,
+          '/integracion-shopify/': 0.9,
+          '/partner-shopify/': 0.8,
+          '/soluciones/shopify-b2b/': 0.8,
+          '/marketing-shopify/': 0.8,
+          '/integracion-shopify/erp-shopify/': 0.8,
+          '/migracion-shopify/magento-a-shopify/': 0.8,
+          '/migracion-shopify/prestashop-a-shopify/': 0.7,
+          '/shopify/advanced/': 0.7,
+          '/soluciones/shopify-dtc/': 0.7,
+          '/soluciones/shopify-b2c/': 0.7,
+          '/migracion-shopify/logicommerce-a-shopify/': 0.6,
+        };
+
+        const path = new URL(item.url).pathname;
+        item.priority = priorities[path] || 0.5;
+        item.changefreq = path === '/' ? 'daily' : 'weekly';
+        return item;
+      },
+    }),
+  ],
   vite: {
     plugins: [tailwindcss()],
   },
