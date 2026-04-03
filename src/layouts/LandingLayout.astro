@@ -11,9 +11,12 @@ interface Props {
   breadcrumbs: BreadcrumbItem[];
   jsonLd?: Record<string, unknown>[];
   ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  keywords?: string;
 }
 
-const { title, description, breadcrumbs, jsonLd = [], ogImage } = Astro.props;
+const { title, description, breadcrumbs, jsonLd = [], ogImage, ogTitle, ogDescription, keywords } = Astro.props;
 
 const currentPath = Astro.url.pathname;
 const relatedPages: InternalLink[] = clusterLinks[currentPath] || [];
@@ -21,7 +24,7 @@ const relatedPages: InternalLink[] = clusterLinks[currentPath] || [];
 
 <BaseLayout>
   <Fragment slot="head">
-    <SEOHead title={title} description={description} ogImage={ogImage} />
+    <SEOHead title={title} description={description} ogImage={ogImage} ogTitle={ogTitle} ogDescription={ogDescription} keywords={keywords} />
     {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
   </Fragment>
 

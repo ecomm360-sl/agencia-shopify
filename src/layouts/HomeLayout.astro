@@ -6,15 +6,19 @@ import JsonLd from '../components/seo/JsonLd.astro';
 interface Props {
   title: string;
   description: string;
+  ogImage?: string;
+  ogTitle?: string;
+  ogDescription?: string;
+  keywords?: string;
   jsonLd?: Record<string, unknown>[];
 }
 
-const { title, description, jsonLd = [] } = Astro.props;
+const { title, description, ogImage, ogTitle, ogDescription, keywords, jsonLd = [] } = Astro.props;
 ---
 
 <BaseLayout>
   <Fragment slot="head">
-    <SEOHead title={title} description={description} />
+    <SEOHead title={title} description={description} ogImage={ogImage} ogTitle={ogTitle} ogDescription={ogDescription} keywords={keywords} />
     {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
   </Fragment>
   <slot />
