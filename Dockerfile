@@ -24,6 +24,10 @@ RUN npx astro build
 FROM node:24-alpine AS runtime
 WORKDIR /app
 
+# Copy package files and install production deps only
+COPY package.json pnpm-lock.yaml ./
+RUN corepack enable && corepack prepare pnpm@latest --activate && pnpm install --frozen-lockfile --prod
+
 # Copy built output (server + static assets)
 COPY --from=build /app/dist ./dist
 
