@@ -5,6 +5,7 @@ interface Props {
   subtitle: string;
   ctaPrimary?: { label: string; href: string };
   ctaSecondary?: { label: string; href: string };
+  service?: string;
 }
 
 const {
@@ -13,13 +14,14 @@ const {
   subtitle,
   ctaPrimary = { label: 'Solicitar propuesta', href: '#contacto' },
   ctaSecondary,
+  service,
 } = Astro.props;
 ---
 
 <section id="contacto" class="relative overflow-hidden bg-[#071311] py-24 md:py-28">
   <div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(126,207,77,0.16),transparent_28%)]"></div>
   <div class="container relative z-10">
-    <div class="grid gap-10 rounded-[2.25rem] border border-white/10 bg-white/6 p-8 shadow-[0_30px_120px_rgba(0,0,0,0.32)] backdrop-blur-2xl md:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+    <div class="grid gap-10 rounded-[2.25rem] border border-white/10 bg-white/6 p-8 shadow-[0_30px_120px_rgba(0,0,0,0.32)] backdrop-blur-2xl md:p-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-start">
       <div>
         <div class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/6 px-4 py-2 text-sm text-[#A7EA7A]">
           <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.937 15.5A2 2 0 0 0 8.5 14.063l-6.135-1.582a.5.5 0 0 1 0-.962L8.5 9.936A2 2 0 0 0 9.937 8.5l1.582-6.135a.5.5 0 0 1 .963 0L14.063 8.5A2 2 0 0 0 15.5 9.937l6.135 1.581a.5.5 0 0 1 0 .964L15.5 14.063a2 2 0 0 0-1.437 1.437l-1.582 6.135a.5.5 0 0 1-.963 0z"/></svg>
@@ -31,41 +33,183 @@ const {
         <p class="mt-6 max-w-2xl text-lg leading-8 text-white/70">
           {subtitle}
         </p>
-      </div>
 
-      <div class="grid gap-4 rounded-[1.8rem] bg-[rgba(243,247,240,0.06)] p-5 ring-1 ring-white/10">
-        <div class="flex items-center gap-4 rounded-[1.4rem] border border-white/10 bg-black/12 p-4">
-          <div class="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#7ECF4D]/18">
-            <svg viewBox="0 0 84 84" class="h-10 w-10" aria-hidden="true">
-              <defs>
-                <linearGradient id="cta-front" x1="20" y1="18" x2="45" y2="60">
-                  <stop offset="0" stop-color="#95D66A" />
-                  <stop offset="1" stop-color="#62A83B" />
-                </linearGradient>
-                <linearGradient id="cta-side" x1="48" y1="22" x2="61" y2="66">
-                  <stop offset="0" stop-color="#548C36" />
-                  <stop offset="1" stop-color="#376A21" />
-                </linearGradient>
-              </defs>
-              <path d="M33 24L51 18L58 61L40 66L33 24Z" fill="url(#cta-side)" />
-              <path d="M24 25L47 18L51 18L40 66L18 58L24 25Z" fill="url(#cta-front)" />
-              <path d="M34 15C35 10 39 7 43 7C48 7 51 10 52 15" stroke="#9CDC70" stroke-width="3.5" stroke-linecap="round" />
-            </svg>
-          </div>
-          <div>
-            <div class="text-base font-semibold text-white">Agencia Shopify</div>
-            <div class="mt-1 text-sm text-white/62">Identidad lista para convertirse en sistema web completo.</div>
+        <div class="mt-10 hidden lg:block">
+          <div class="flex items-center gap-4 rounded-[1.4rem] border border-white/10 bg-black/12 p-4">
+            <div class="flex h-14 w-14 items-center justify-center rounded-2xl bg-[#7ECF4D]/18">
+              <svg viewBox="0 0 84 84" class="h-9 w-9" aria-hidden="true">
+                <defs>
+                  <linearGradient id="cta-front" x1="20" y1="18" x2="45" y2="60">
+                    <stop offset="0" stop-color="#95D66A" />
+                    <stop offset="1" stop-color="#62A83B" />
+                  </linearGradient>
+                  <linearGradient id="cta-side" x1="48" y1="22" x2="61" y2="66">
+                    <stop offset="0" stop-color="#548C36" />
+                    <stop offset="1" stop-color="#376A21" />
+                  </linearGradient>
+                </defs>
+                <path d="M33 24L51 18L58 61L40 66L33 24Z" fill="url(#cta-side)" />
+                <path d="M24 25L47 18L51 18L40 66L18 58L24 25Z" fill="url(#cta-front)" />
+                <path d="M34 15C35 10 39 7 43 7C48 7 51 10 52 15" stroke="#9CDC70" stroke-width="3.5" stroke-linecap="round" />
+              </svg>
+            </div>
+            <div>
+              <div class="text-base font-semibold text-white">eComm360 — Agencia Shopify</div>
+              <div class="mt-1 text-sm text-white/55">Respuesta en menos de 24h laborables.</div>
+            </div>
           </div>
         </div>
-        <a href={ctaPrimary.href} class="block rounded-full bg-[#7ECF4D] py-4 text-center text-base font-semibold text-[#08110D] shadow-[0_16px_40px_rgba(126,207,77,0.34)] transition hover:bg-[#95D66A]">
-          {ctaPrimary.label}
-        </a>
-        {ctaSecondary && (
-          <a href={ctaSecondary.href} class="block rounded-full border border-white/14 bg-white/5 py-4 text-center text-base text-white transition hover:bg-white/10 hover:text-white">
-            {ctaSecondary.label}
-          </a>
-        )}
       </div>
+
+      <!-- Contact Form -->
+      <form id="contact-form" class="grid gap-4 rounded-[1.8rem] bg-[rgba(243,247,240,0.06)] p-5 ring-1 ring-white/10 md:p-6">
+        {service && <input type="hidden" name="service" value={service} />}
+
+        <!-- Honeypot -->
+        <div class="absolute -left-[9999px]" aria-hidden="true">
+          <input type="text" name="_hp" tabindex="-1" autocomplete="off" />
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="contact-name" class="mb-1.5 block text-sm font-medium text-white/70">
+              Nombre <span class="text-[#A7EA7A]">*</span>
+            </label>
+            <input
+              type="text"
+              id="contact-name"
+              name="name"
+              required
+              autocomplete="name"
+              placeholder="Tu nombre"
+              class="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#7ECF4D]/50 focus:outline-none focus:ring-1 focus:ring-[#7ECF4D]/50"
+            />
+          </div>
+          <div>
+            <label for="contact-email" class="mb-1.5 block text-sm font-medium text-white/70">
+              Email <span class="text-[#A7EA7A]">*</span>
+            </label>
+            <input
+              type="email"
+              id="contact-email"
+              name="email"
+              required
+              autocomplete="email"
+              placeholder="tu@empresa.com"
+              class="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#7ECF4D]/50 focus:outline-none focus:ring-1 focus:ring-[#7ECF4D]/50"
+            />
+          </div>
+        </div>
+
+        <div class="grid gap-4 sm:grid-cols-2">
+          <div>
+            <label for="contact-company" class="mb-1.5 block text-sm font-medium text-white/70">
+              Empresa
+            </label>
+            <input
+              type="text"
+              id="contact-company"
+              name="company"
+              autocomplete="organization"
+              placeholder="Nombre de tu empresa"
+              class="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#7ECF4D]/50 focus:outline-none focus:ring-1 focus:ring-[#7ECF4D]/50"
+            />
+          </div>
+          <div>
+            <label for="contact-phone" class="mb-1.5 block text-sm font-medium text-white/70">
+              Teléfono
+            </label>
+            <input
+              type="tel"
+              id="contact-phone"
+              name="phone"
+              autocomplete="tel"
+              placeholder="+34 600 000 000"
+              class="w-full rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#7ECF4D]/50 focus:outline-none focus:ring-1 focus:ring-[#7ECF4D]/50"
+            />
+          </div>
+        </div>
+
+        <div>
+          <label for="contact-message" class="mb-1.5 block text-sm font-medium text-white/70">
+            Mensaje <span class="text-[#A7EA7A]">*</span>
+          </label>
+          <textarea
+            id="contact-message"
+            name="message"
+            required
+            rows="4"
+            placeholder="Cuéntanos sobre tu proyecto: plataforma actual, objetivos, plazos..."
+            class="w-full resize-none rounded-xl border border-white/10 bg-white/6 px-4 py-3 text-sm text-white placeholder:text-white/30 focus:border-[#7ECF4D]/50 focus:outline-none focus:ring-1 focus:ring-[#7ECF4D]/50"
+          ></textarea>
+        </div>
+
+        <!-- Success message (hidden by default) -->
+        <div id="form-success" class="hidden rounded-xl border border-[#7ECF4D]/30 bg-[#7ECF4D]/10 p-4 text-center text-sm text-[#A7EA7A]">
+          <svg class="mx-auto mb-2 h-6 w-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>
+          Mensaje enviado. Te responderemos en menos de 24h.
+        </div>
+
+        <!-- Error message (hidden by default) -->
+        <div id="form-error" class="hidden rounded-xl border border-red-500/30 bg-red-500/10 p-4 text-center text-sm text-red-300">
+        </div>
+
+        <button
+          type="submit"
+          id="form-submit"
+          class="rounded-full bg-[#7ECF4D] py-4 text-base font-semibold text-[#08110D] shadow-[0_16px_40px_rgba(126,207,77,0.34)] transition hover:bg-[#95D66A] disabled:opacity-50 disabled:cursor-not-allowed"
+        >
+          {ctaPrimary.label}
+        </button>
+
+        <p class="text-center text-xs text-white/35">
+          Al enviar aceptas nuestra <a href="/politica-privacidad/" class="underline hover:text-white/50">política de privacidad</a>.
+        </p>
+      </form>
     </div>
   </div>
 </section>
+
+<script>
+  const form = document.getElementById('contact-form') as HTMLFormElement;
+  const submitBtn = document.getElementById('form-submit') as HTMLButtonElement;
+  const successEl = document.getElementById('form-success')!;
+  const errorEl = document.getElementById('form-error')!;
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    successEl.classList.add('hidden');
+    errorEl.classList.add('hidden');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Enviando...';
+
+    const data = Object.fromEntries(new FormData(form));
+
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+
+      const json = await res.json();
+
+      if (res.ok && json.success) {
+        form.reset();
+        successEl.classList.remove('hidden');
+        submitBtn.textContent = 'Enviado ✓';
+      } else {
+        errorEl.textContent = json.error || 'Error al enviar. Inténtalo de nuevo.';
+        errorEl.classList.remove('hidden');
+        submitBtn.disabled = false;
+        submitBtn.textContent = form.querySelector('button[type="submit"]')?.getAttribute('data-label') || 'Solicitar propuesta';
+      }
+    } catch {
+      errorEl.textContent = 'Error de conexión. Comprueba tu internet e inténtalo de nuevo.';
+      errorEl.classList.remove('hidden');
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Solicitar propuesta';
+    }
+  });
+</script>

@@ -17,18 +17,18 @@ COPY src/ src/
 COPY public/ public/
 COPY brand/ brand/
 
-# Build static site
+# Build
 RUN npx astro build
 
-# Stage 2: Serve with nginx
-FROM nginx:alpine AS runtime
+# Stage 2: Production runtime
+FROM node:24-alpine AS runtime
+WORKDIR /app
 
-# Copy custom nginx config
-COPY nginx.conf /etc/nginx/nginx.conf
+# Copy built output (server + static assets)
+COPY --from=build /app/dist ./dist
 
-# Copy built static files
-COPY --from=build /app/dist /usr/share/nginx/html
-
+ENV HOST=0.0.0.0
+ENV PORT=80
 EXPOSE 80
 
-CMD ["nginx", "-g", "daemon off;"]
+CMD ["node", "dist/server/entry.mjs"]
