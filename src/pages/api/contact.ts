@@ -3,10 +3,10 @@ export const prerender = false;
 import type { APIRoute } from 'astro';
 import { Resend } from 'resend';
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-const TO_EMAIL = import.meta.env.CONTACT_TO_EMAIL || 'hola@ecomm360.es';
-const FROM_EMAIL = import.meta.env.CONTACT_FROM_EMAIL || 'web@agencia-shopify.com';
+const TO_EMAIL = process.env.CONTACT_TO_EMAIL || 'hola@ecomm360.es';
+const FROM_EMAIL = process.env.CONTACT_FROM_EMAIL || 'web@agencia-shopify.com';
 
 export const POST: APIRoute = async ({ request }) => {
   const headers = { 'Content-Type': 'application/json' };
