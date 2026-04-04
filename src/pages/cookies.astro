@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/seo/SEOHead.astro';
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <SEOHead
+      title="Política de Cookies"
+      description="Política de cookies de agencia-shopify.com. Información sobre las cookies utilizadas en este sitio web."
+      noindex={true}
+    />
+  </Fragment>
+
+  <section class="pt-32 pb-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="text-4xl font-extrabold tracking-[-0.06em] text-[#111714]">Política de Cookies</h1>
+        <p class="mt-4 text-sm text-[#617069]">Última actualización: abril 2026</p>
+
+        <div class="mt-10 space-y-8 text-[#24312b] leading-7">
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">¿Qué son las cookies?</h2>
+            <p class="mt-3">Las cookies son pequeños archivos de texto que los sitios web colocan en tu dispositivo para almacenar información sobre tu navegación. Se utilizan para mejorar la experiencia del usuario, analizar el tráfico y personalizar el contenido.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Cookies que utilizamos</h2>
+            <div class="mt-4 overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead>
+                  <tr class="border-b border-[#d7e5d3]">
+                    <th class="py-3 pr-4 text-left font-semibold text-[#111714]">Cookie</th>
+                    <th class="py-3 pr-4 text-left font-semibold text-[#111714]">Proveedor</th>
+                    <th class="py-3 pr-4 text-left font-semibold text-[#111714]">Finalidad</th>
+                    <th class="py-3 text-left font-semibold text-[#111714]">Duración</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr class="border-b border-[#f0f4ed]">
+                    <td class="py-3 pr-4">_ga</td>
+                    <td class="py-3 pr-4">Google Analytics</td>
+                    <td class="py-3 pr-4">Distinguir usuarios únicos para analítica web</td>
+                    <td class="py-3">2 años</td>
+                  </tr>
+                  <tr class="border-b border-[#f0f4ed]">
+                    <td class="py-3 pr-4">_ga_*</td>
+                    <td class="py-3 pr-4">Google Analytics</td>
+                    <td class="py-3 pr-4">Mantener el estado de la sesión</td>
+                    <td class="py-3">2 años</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Tipos de cookies</h2>
+            <ul class="mt-3 list-disc pl-6 space-y-2">
+              <li><strong>Cookies analíticas:</strong> Nos permiten medir y analizar el tráfico del sitio web mediante Google Analytics (GA4). Los datos se recogen de forma agregada y anónima.</li>
+              <li><strong>Cookies técnicas:</strong> Son estrictamente necesarias para el funcionamiento del sitio web y no requieren consentimiento.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Cómo gestionar las cookies</h2>
+            <p class="mt-3">Puedes configurar tu navegador para aceptar, rechazar o eliminar cookies. A continuación te indicamos cómo hacerlo en los navegadores más habituales:</p>
+            <ul class="mt-3 list-disc pl-6 space-y-1">
+              <li>Chrome: Configuración → Privacidad y seguridad → Cookies</li>
+              <li>Firefox: Opciones → Privacidad y seguridad → Cookies</li>
+              <li>Safari: Preferencias → Privacidad → Gestionar datos de sitios web</li>
+              <li>Edge: Configuración → Cookies y permisos del sitio</li>
+            </ul>
+            <p class="mt-3">Ten en cuenta que la desactivación de cookies puede afectar al correcto funcionamiento de algunos elementos del sitio web.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Más información</h2>
+            <p class="mt-3">Para más información sobre el uso de tus datos personales, consulta nuestra <a href="/politica-privacidad/" class="font-medium text-[#376A21] underline decoration-[#376A21]/30 hover:decoration-[#376A21]">política de privacidad</a>. Si tienes dudas, puedes contactarnos en <strong>comercial@ecomm360.es</strong>.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

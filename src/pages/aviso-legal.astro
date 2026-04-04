@@ -1,0 +1,56 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/seo/SEOHead.astro';
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <SEOHead
+      title="Aviso Legal"
+      description="Aviso legal de agencia-shopify.com, sitio web de eComm360. Información legal, condiciones de uso y responsabilidad."
+      noindex={true}
+    />
+  </Fragment>
+
+  <section class="pt-32 pb-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="text-4xl font-extrabold tracking-[-0.06em] text-[#111714]">Aviso Legal</h1>
+        <p class="mt-4 text-sm text-[#617069]">Última actualización: abril 2026</p>
+
+        <div class="mt-10 space-y-8 text-[#24312b] leading-7">
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Identificación del titular</h2>
+            <p class="mt-3">En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se informa que el presente sitio web <strong>agencia-shopify.com</strong> es titularidad de:</p>
+            <ul class="mt-3 list-disc pl-6 space-y-1">
+              <li><strong>Razón social:</strong> eComm360 S.L.</li>
+              <li><strong>Domicilio social:</strong> España</li>
+              <li><strong>Email de contacto:</strong> comercial@ecomm360.es</li>
+              <li><strong>Actividad:</strong> Servicios de consultoría, diseño, desarrollo e integración de soluciones eCommerce sobre Shopify.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Objeto y ámbito de aplicación</h2>
+            <p class="mt-3">El presente aviso legal regula el uso del sitio web agencia-shopify.com. El acceso y navegación por el sitio web atribuye la condición de usuario e implica la aceptación plena y sin reservas de todas y cada una de las disposiciones incluidas en este aviso legal.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Propiedad intelectual e industrial</h2>
+            <p class="mt-3">Todos los contenidos del sitio web, incluyendo textos, fotografías, gráficos, imágenes, iconos, tecnología, software, enlaces y demás contenidos audiovisuales o sonoros, así como su diseño gráfico y códigos fuente, son propiedad intelectual de eComm360 S.L. o de terceros, sin que puedan entenderse cedidos al usuario ninguno de los derechos de explotación reconocidos por la normativa vigente.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Responsabilidad</h2>
+            <p class="mt-3">eComm360 S.L. no se hace responsable de los daños y perjuicios de toda naturaleza que pudieran derivarse del uso de los contenidos del sitio web. La información contenida en este sitio web es de carácter general y se ofrece a título informativo, sin garantizar en ningún caso la exactitud, veracidad, vigencia y/o completitud de la información facilitada.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Legislación aplicable</h2>
+            <p class="mt-3">Las presentes condiciones se rigen por la legislación española. Para la resolución de cualquier controversia que pudiera surgir, las partes se someten a los Juzgados y Tribunales del domicilio social de eComm360 S.L.</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

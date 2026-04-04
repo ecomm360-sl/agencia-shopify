@@ -24,6 +24,9 @@ RUN npx astro build
 FROM node:24-alpine AS runtime
 WORKDIR /app
 
+# Install nginx for reverse proxy with gzip
+RUN apk add --no-cache nginx
+
 # Copy package files and install production deps only
 COPY package.json pnpm-lock.yaml ./
 RUN corepack enable && corepack prepare pnpm@latest --activate && pnpm install --frozen-lockfile --prod
@@ -31,8 +34,15 @@ RUN corepack enable && corepack prepare pnpm@latest --activate && pnpm install -
 # Copy built output (server + static assets)
 COPY --from=build /app/dist ./dist
 
-ENV HOST=0.0.0.0
-ENV PORT=80
+# Copy nginx config
+COPY nginx.conf /etc/nginx/nginx.conf
+
+# Startup script: run Node + nginx
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+ENV HOST=127.0.0.1
+ENV PORT=4321
 EXPOSE 80
 
-CMD ["node", "dist/server/entry.mjs"]
+CMD ["/entrypoint.sh"]

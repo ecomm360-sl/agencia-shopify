@@ -1,0 +1,64 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SEOHead from '../components/seo/SEOHead.astro';
+---
+
+<BaseLayout>
+  <Fragment slot="head">
+    <SEOHead
+      title="Política de Privacidad"
+      description="Política de privacidad de agencia-shopify.com. Información sobre el tratamiento de datos personales conforme al RGPD."
+      noindex={true}
+    />
+  </Fragment>
+
+  <section class="pt-32 pb-20">
+    <div class="container">
+      <div class="mx-auto max-w-3xl">
+        <h1 class="text-4xl font-extrabold tracking-[-0.06em] text-[#111714]">Política de Privacidad</h1>
+        <p class="mt-4 text-sm text-[#617069]">Última actualización: abril 2026</p>
+
+        <div class="mt-10 space-y-8 text-[#24312b] leading-7">
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Responsable del tratamiento</h2>
+            <ul class="mt-3 list-disc pl-6 space-y-1">
+              <li><strong>Responsable:</strong> eComm360 S.L.</li>
+              <li><strong>Email:</strong> comercial@ecomm360.es</li>
+              <li><strong>Finalidad:</strong> Gestionar las consultas recibidas a través del formulario de contacto y enviar comunicaciones comerciales si el usuario lo autoriza.</li>
+            </ul>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Datos que recopilamos</h2>
+            <p class="mt-3">A través del formulario de contacto recopilamos: nombre, email, empresa (opcional), teléfono (opcional) y mensaje. Estos datos se tratan con la finalidad de responder a tu consulta y, en su caso, elaborar una propuesta comercial.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Base legal</h2>
+            <p class="mt-3">El tratamiento de tus datos se basa en el consentimiento del interesado (artículo 6.1.a del RGPD) y en el interés legítimo del responsable (artículo 6.1.f del RGPD) para atender consultas comerciales.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Destinatarios</h2>
+            <p class="mt-3">Los datos podrán ser comunicados a los siguientes prestadores de servicios que actúan como encargados del tratamiento:</p>
+            <ul class="mt-3 list-disc pl-6 space-y-1">
+              <li><strong>Resend:</strong> Para el envío de emails transaccionales y de confirmación.</li>
+              <li><strong>Google Analytics:</strong> Para la analítica web (datos anonimizados).</li>
+            </ul>
+            <p class="mt-3">No se realizan transferencias internacionales de datos fuera del Espacio Económico Europeo salvo las derivadas del uso de los servicios mencionados, que cuentan con las garantías adecuadas.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Conservación</h2>
+            <p class="mt-3">Los datos personales se conservarán mientras sea necesario para atender tu consulta y durante el plazo legalmente establecido. Puedes solicitar su eliminación en cualquier momento.</p>
+          </section>
+
+          <section>
+            <h2 class="text-2xl font-bold tracking-[-0.04em] text-[#111714]">Derechos del interesado</h2>
+            <p class="mt-3">Puedes ejercer tus derechos de acceso, rectificación, supresión, limitación, portabilidad y oposición enviando un email a <strong>comercial@ecomm360.es</strong> indicando tu solicitud y acompañando copia de tu DNI o documento identificativo. También tienes derecho a presentar una reclamación ante la Agencia Española de Protección de Datos (aepd.es).</p>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

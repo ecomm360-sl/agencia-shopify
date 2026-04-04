@@ -34,12 +34,13 @@ const socialDescription = ogDescription || description;
 <title>{fullTitle}</title>
 <meta name="description" content={description} />
 <link rel="canonical" href={canonical} />
-{noindex && <meta name="robots" content="noindex, nofollow" />}
+<meta name="robots" content={noindex ? "noindex, nofollow" : "index, follow, max-image-preview:large, max-snippet:-1"} />
 {keywords && <meta name="keywords" content={keywords} />}
 
 <!-- Language -->
 <meta property="og:locale" content="es_ES" />
 <link rel="alternate" hreflang="es" href={canonical} />
+<link rel="alternate" hreflang="x-default" href={canonical} />
 
 <!-- Open Graph -->
 <meta property="og:type" content={ogType} />
