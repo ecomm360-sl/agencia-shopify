@@ -41,8 +41,6 @@ COPY nginx.conf /etc/nginx/nginx.conf
 COPY entrypoint.sh /entrypoint.sh
 RUN chmod +x /entrypoint.sh
 
-ENV HOST=127.0.0.1
-ENV PORT=4321
 EXPOSE 80
 
 CMD ["/entrypoint.sh"]
