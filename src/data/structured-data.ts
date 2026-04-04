@@ -1,4 +1,20 @@
 export const SITE_URL = 'https://agencia-shopify.com';
+export const CURRENT_DATE = new Date().toISOString().split('T')[0];
+
+const address = {
+  '@type': 'PostalAddress',
+  streetAddress: 'Pla. Urquinaona, 6, 14B',
+  addressLocality: 'Barcelona',
+  addressRegion: 'Barcelona',
+  postalCode: '08010',
+  addressCountry: 'ES',
+};
+
+const geo = {
+  '@type': 'GeoCoordinates',
+  latitude: 41.3898,
+  longitude: 2.1713,
+};
 
 export const organization = {
   '@type': 'Organization',
@@ -9,6 +25,14 @@ export const organization = {
   image: `${SITE_URL}/og/home.png`,
   description: 'Agencia especializada en Shopify: diseño, migraciones, B2B, integraciones ERP y crecimiento eCommerce en España.',
   foundingDate: '2013',
+  address,
+  geo,
+  telephone: '+34933903137',
+  email: 'info@ecomm360.es',
+  sameAs: [
+    'https://es.linkedin.com/company/ecomm360-s-l',
+    'https://www.shopify.com/partners/directory',
+  ],
   areaServed: {
     '@type': 'Country',
     name: 'España',
@@ -16,12 +40,8 @@ export const organization = {
   },
   serviceArea: {
     '@type': 'GeoCircle',
-    geoMidpoint: {
-      '@type': 'GeoCoordinates',
-      latitude: 40.4168,
-      longitude: -3.7038,
-    },
-    geoRadius: '1000',
+    geoMidpoint: geo,
+    geoRadius: '500',
   },
   knowsAbout: [
     'Shopify',
@@ -77,6 +97,13 @@ export const localBusiness = {
   url: SITE_URL,
   image: `${SITE_URL}/og/home.png`,
   description: 'Partner tecnológico especializado en Shopify para diseño, migración, B2B, integración ERP y crecimiento en España.',
+  address,
+  geo,
+  telephone: '+34933903137',
+  email: 'info@ecomm360.es',
+  sameAs: [
+    'https://es.linkedin.com/company/ecomm360-s-l',
+  ],
   areaServed: {
     '@type': 'Country',
     name: 'España',
@@ -90,8 +117,8 @@ export const localBusiness = {
     opens: '09:00',
     closes: '18:00',
   },
-  email: 'comercial@ecomm360.es',
   knowsLanguage: ['es', 'en'],
+  hasMap: 'https://maps.google.com/?q=Pla.+Urquinaona+6+Barcelona+08010',
 };
 
 export const website = {
@@ -100,6 +127,7 @@ export const website = {
   alternateName: 'Agencia Shopify España',
   url: SITE_URL,
   inLanguage: 'es',
+  dateModified: CURRENT_DATE,
   publisher: {
     '@type': 'Organization',
     name: 'eComm360',

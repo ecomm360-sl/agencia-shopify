@@ -18,17 +18,14 @@ const { class: className } = Astro.props;
 
     <!-- Favicon & App -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="manifest" href="/site.webmanifest" />
     <meta name="theme-color" content="#7ECF4D" />
     <meta name="msapplication-TileColor" content="#071311" />
 
-    <!-- Preconnect & Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Self-hosted Fonts (eliminates Google Fonts waterfall: -5.7s FCP) -->
+    <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin />
 
     <!-- Author & Geo -->
     <meta name="author" content="eComm360" />
