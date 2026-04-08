@@ -31,11 +31,23 @@ export default defineConfig({
           '/soluciones/shopify-dtc/': 0.7,
           '/soluciones/shopify-b2c/': 0.7,
           '/migracion-shopify/logicommerce-a-shopify/': 0.6,
+          '/aviso-legal/': 0.1,
+          '/politica-privacidad/': 0.1,
+          '/cookies/': 0.1,
         };
 
+        const yearlyPaths = ['/aviso-legal/', '/politica-privacidad/', '/cookies/'];
         const path = new URL(item.url).pathname;
         item.priority = priorities[path] || 0.5;
-        item.changefreq = path === '/' ? 'daily' : 'weekly';
+
+        if (path === '/') {
+          item.changefreq = 'daily';
+        } else if (yearlyPaths.includes(path)) {
+          item.changefreq = 'yearly';
+        } else {
+          item.changefreq = 'weekly';
+        }
+
         return item;
       },
     }),
