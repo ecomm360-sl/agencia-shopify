@@ -1,0 +1,48 @@
+---
+// Cookie consent banner — GDPR/LSSI-CE compliant
+// Visual UI rendered in body, consent logic inline in head via BaseLayout
+---
+
+<div id="cookie-banner" class="fixed inset-x-0 bottom-0 z-50 hidden p-4 md:p-6" role="dialog" aria-label="Consentimiento de cookies" aria-modal="false">
+  <div class="mx-auto max-w-3xl rounded-2xl border border-white/10 bg-[rgba(6,15,14,0.92)] p-5 shadow-[0_-20px_60px_rgba(0,0,0,0.3)] backdrop-blur-xl md:p-6">
+    <div class="flex flex-col gap-4 md:flex-row md:items-start md:gap-6">
+      <div class="flex-1">
+        <h2 class="text-base font-semibold text-white">Esta web usa cookies</h2>
+        <p class="mt-1.5 text-sm leading-6 text-white/60">
+          Utilizamos cookies analíticas (Google Analytics) para entender cómo se usa el sitio y mejorar la experiencia. No usamos cookies publicitarias. Puedes aceptar, rechazar o consultar nuestra <a href="/cookies/" class="text-[#A7EA7A] underline decoration-[#A7EA7A]/30 hover:decoration-[#A7EA7A]">política de cookies</a>.
+        </p>
+      </div>
+      <div class="flex shrink-0 flex-col gap-2 sm:flex-row md:flex-col">
+        <button id="cookie-accept" class="rounded-full bg-[#7ECF4D] px-5 py-2.5 text-sm font-semibold text-[#08110D] transition hover:bg-[#95D66A]">
+          Aceptar cookies
+        </button>
+        <button id="cookie-reject" class="rounded-full border border-white/15 bg-white/5 px-5 py-2.5 text-sm font-medium text-white transition hover:bg-white/10">
+          Solo necesarias
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function() {
+    var consent = localStorage.getItem('cookie_consent');
+
+    if (consent === null) {
+      document.getElementById('cookie-banner').classList.remove('hidden');
+    } else if (consent === 'accepted') {
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+    }
+
+    document.getElementById('cookie-accept')?.addEventListener('click', function() {
+      localStorage.setItem('cookie_consent', 'accepted');
+      gtag('consent', 'update', { 'analytics_storage': 'granted' });
+      document.getElementById('cookie-banner').classList.add('hidden');
+    });
+
+    document.getElementById('cookie-reject')?.addEventListener('click', function() {
+      localStorage.setItem('cookie_consent', 'rejected');
+      document.getElementById('cookie-banner').classList.add('hidden');
+    });
+  })();
+</script>
