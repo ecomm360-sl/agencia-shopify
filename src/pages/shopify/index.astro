@@ -7,7 +7,7 @@ import ServiceCards from '../../components/sections/ServiceCards.astro';
 import Methodology from '../../components/aeo/Methodology.astro';
 import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
 import ContactBlock from '../../components/sections/ContactBlock.astro';
-import { organization } from '../../data/structured-data';
+import { organization, createHowToSchema } from '../../data/structured-data';
 
 const breadcrumbs = [{ label: 'Agencia Shopify' }];
 
@@ -36,6 +36,17 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: faq.answer },
   })),
 };
+
+const howToSchema = createHowToSchema(
+  'Cómo trabaja una agencia Shopify especializada',
+  'Proceso consultivo en 4 fases para diseñar, desarrollar y lanzar una tienda Shopify orientada a conversión y crecimiento.',
+  [
+    { title: 'Diagnóstico', text: 'Analizamos tu negocio, catálogo, operativa y objetivos para definir el alcance real del proyecto.' },
+    { title: 'Estrategia', text: 'Diseñamos la arquitectura de la tienda, las integraciones necesarias y el plan de migración si aplica.' },
+    { title: 'Implementación', text: 'Desarrollamos la tienda con diseño premium, optimización de rendimiento y preparación para escalar.' },
+    { title: 'Lanzamiento y growth', text: 'Lanzamos con todo testado y activamos estrategias de crecimiento medibles.' },
+  ]
+);
 ---
 
 <LandingLayout
@@ -46,7 +57,7 @@ const faqSchema = {
   ogImage="https://agencia-shopify.com/og/shopify.png"
   keywords="agencia shopify españa, expertos shopify, desarrollo shopify, consultoría shopify, tienda shopify profesional, diseño shopify a medida"
   breadcrumbs={breadcrumbs}
-  jsonLd={[organization, serviceSchema, faqSchema]}
+  jsonLd={[organization, serviceSchema, faqSchema, howToSchema]}
 >
   <HeroLight
     badge="Agencia Shopify en España"

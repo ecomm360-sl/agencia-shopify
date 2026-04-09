@@ -156,3 +156,49 @@ export const siteNavigationElement = {
     { '@type': 'WebPage', name: 'Partner Shopify', url: `${SITE_URL}/partner-shopify/` },
   ],
 };
+
+// Helper: HowTo schema generator from methodology steps
+export function createHowToSchema(name: string, description: string, steps: { title: string; text: string }[]) {
+  return {
+    '@type': 'HowTo',
+    name,
+    description,
+    step: steps.map((s, i) => ({
+      '@type': 'HowToStep',
+      position: i + 1,
+      name: s.title,
+      text: s.text,
+    })),
+  };
+}
+
+// Helper: Speakable schema (for Google Assistant / voice search)
+// Marks the ShortAnswer block (id="respuesta") as speakable
+export const speakableSpec = {
+  '@type': 'WebPage',
+  speakable: {
+    '@type': 'SpeakableSpecification',
+    cssSelector: ['#respuesta', 'h1'],
+  },
+  inLanguage: 'es-ES',
+  isPartOf: {
+    '@type': 'WebSite',
+    name: 'eComm360 - Agencia Shopify',
+    url: SITE_URL,
+  },
+};
+
+// Helper: ContactPage schema for the contact section / page
+export const contactPage = {
+  '@type': 'ContactPage',
+  name: 'Contacto eComm360 — Agencia Shopify',
+  url: `${SITE_URL}/#contacto`,
+  inLanguage: 'es-ES',
+  mainEntity: {
+    '@type': 'Organization',
+    name: 'eComm360',
+    email: 'info@ecomm360.es',
+    telephone: '+34933903137',
+    address,
+  },
+};

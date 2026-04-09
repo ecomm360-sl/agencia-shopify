@@ -6,7 +6,7 @@ import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
 import Methodology from '../../components/aeo/Methodology.astro';
 import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
 import ContactBlock from '../../components/sections/ContactBlock.astro';
-import { organization } from '../../data/structured-data';
+import { organization, createHowToSchema } from '../../data/structured-data';
 
 const breadcrumbs = [{ label: 'Migración a Shopify' }];
 
@@ -35,6 +35,19 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: faq.answer },
   })),
 };
+
+const howToSchema = createHowToSchema(
+  'Cómo migrar una tienda a Shopify',
+  'Proceso profesional en 6 fases para migrar un eCommerce a Shopify desde cualquier plataforma sin perder datos, clientes ni posicionamiento SEO.',
+  [
+    { title: 'Auditoría de origen', text: 'Analizamos la plataforma actual: estructura de datos, catálogo, integraciones, SEO existente y complejidad operativa.' },
+    { title: 'Plan de migración', text: 'Definimos el mapa de datos, las reglas de transformación, el plan de redirecciones 301 y la estrategia de preservación SEO.' },
+    { title: 'Migración de datos', text: 'Transferimos productos, clientes, pedidos y contenido con validación automatizada de integridad.' },
+    { title: 'Desarrollo e integración', text: 'Implementamos el diseño de la nueva tienda y configuramos las integraciones necesarias (ERP, CRM, PIM).' },
+    { title: 'QA y validación', text: 'Testing exhaustivo de datos migrados, flujos de compra, integraciones y rendimiento. Validación de redirecciones SEO.' },
+    { title: 'Lanzamiento controlado', text: 'Go-live con monitorización activa, rollback disponible y soporte post-migración durante las primeras semanas.' },
+  ]
+);
 ---
 
 <LandingLayout
@@ -45,7 +58,7 @@ const faqSchema = {
   ogImage="https://agencia-shopify.com/og/migracion-shopify.png"
   keywords="migración shopify, migrar a shopify, replatforming shopify, migración ecommerce, cambiar a shopify, migración tienda online"
   breadcrumbs={breadcrumbs}
-  jsonLd={[organization, serviceSchema, faqSchema]}
+  jsonLd={[organization, serviceSchema, faqSchema, howToSchema]}
 >
   <HeroLight
     badge="Migración a Shopify"

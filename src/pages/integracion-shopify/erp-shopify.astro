@@ -6,7 +6,7 @@ import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
 import Methodology from '../../components/aeo/Methodology.astro';
 import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
 import ContactBlock from '../../components/sections/ContactBlock.astro';
-import { organization } from '../../data/structured-data';
+import { organization, createHowToSchema } from '../../data/structured-data';
 
 const breadcrumbs = [
   { label: 'Integración Shopify', href: '/integracion-shopify/' },
@@ -38,6 +38,17 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: faq.answer },
   })),
 };
+
+const howToSchema = createHowToSchema(
+  'Cómo integrar un ERP con Shopify',
+  'Proceso técnico en 4 fases para sincronizar catálogo, stock, pedidos y facturación entre un ERP (SAP, Dynamics, Sage, Holded) y Shopify.',
+  [
+    { title: 'Auditoría de sistemas', text: 'Analizamos tu ERP, su versión, APIs disponibles, estructura de datos y reglas de negocio que afectan a la sincronización.' },
+    { title: 'Diseño de flujos', text: 'Definimos qué datos se sincronizan, en qué dirección, con qué frecuencia y qué reglas de transformación aplican.' },
+    { title: 'Desarrollo', text: 'Implementamos la integración usando conectores estándar o desarrollo custom según la complejidad del ERP.' },
+    { title: 'Validación y go-live', text: 'Testamos cada flujo con datos reales, monitorizamos la sincronización y ajustamos hasta que la operación sea estable.' },
+  ]
+);
 ---
 
 <LandingLayout
@@ -48,7 +59,7 @@ const faqSchema = {
   ogImage="https://agencia-shopify.com/og/erp-shopify.png"
   keywords="integración erp shopify, shopify sap, shopify dynamics, shopify sage, conectar erp shopify, sincronizar erp tienda online, erp ecommerce"
   breadcrumbs={breadcrumbs}
-  jsonLd={[organization, serviceSchema, faqSchema]}
+  jsonLd={[organization, serviceSchema, faqSchema, howToSchema]}
 >
   <HeroLight
     badge="ERP + Shopify"

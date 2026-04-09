@@ -4,6 +4,7 @@ import SEOHead from '../components/seo/SEOHead.astro';
 import JsonLd from '../components/seo/JsonLd.astro';
 import Breadcrumbs, { type BreadcrumbItem } from '../components/global/Breadcrumbs.astro';
 import { clusterLinks, type InternalLink } from '../data/internal-links';
+import { speakableSpec, contactPage, SITE_URL, CURRENT_DATE } from '../data/structured-data';
 
 interface Props {
   title: string;
@@ -20,12 +21,24 @@ const { title, description, breadcrumbs, jsonLd = [], ogImage, ogTitle, ogDescri
 
 const currentPath = Astro.url.pathname;
 const relatedPages: InternalLink[] = clusterLinks[currentPath] || [];
+
+// Page-level WebPage schema with speakable + dateModified
+const webPage = {
+  ...speakableSpec,
+  url: new URL(currentPath, SITE_URL).href,
+  name: title,
+  description,
+  dateModified: CURRENT_DATE,
+};
+
+// Combine page-specific jsonLd with universal schemas (speakable + ContactPage)
+const allJsonLd = [...jsonLd, webPage, contactPage];
 ---
 
 <BaseLayout>
   <Fragment slot="head">
     <SEOHead title={title} description={description} ogImage={ogImage} ogTitle={ogTitle} ogDescription={ogDescription} keywords={keywords} />
-    {jsonLd.length > 0 && <JsonLd data={jsonLd} />}
+    <JsonLd data={allJsonLd} />
   </Fragment>
 
   <div class="pt-24">

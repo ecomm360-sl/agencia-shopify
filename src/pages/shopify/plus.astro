@@ -7,7 +7,7 @@ import ComparisonTable from '../../components/aeo/ComparisonTable.astro';
 import Methodology from '../../components/aeo/Methodology.astro';
 import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
 import ContactBlock from '../../components/sections/ContactBlock.astro';
-import { organization } from '../../data/structured-data';
+import { organization, createHowToSchema } from '../../data/structured-data';
 
 const breadcrumbs = [
   { label: 'Agencia Shopify', href: '/shopify/' },
@@ -39,6 +39,17 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: faq.answer },
   })),
 };
+
+const howToSchema = createHowToSchema(
+  'Cómo implementar Shopify Plus en una empresa',
+  'Proceso técnico en 4 fases para implementar Shopify Plus con B2B nativo, integraciones ERP y checkout personalizado.',
+  [
+    { title: 'Auditoría técnica', text: 'Evaluamos tu infraestructura actual, integraciones necesarias, complejidad del catálogo y requisitos B2B para dimensionar el proyecto correctamente.' },
+    { title: 'Arquitectura de solución', text: 'Diseñamos la arquitectura técnica completa: flujos de datos, integraciones ERP/CRM, estructura del checkout, configuración B2B y plan de migración.' },
+    { title: 'Desarrollo e integración', text: 'Implementamos el diseño, las integraciones, la personalización del checkout y las automatizaciones con Shopify Flow.' },
+    { title: 'QA, migración y lanzamiento', text: 'Testing exhaustivo de flujos de compra, integraciones y rendimiento. Migración de datos con validación completa antes del lanzamiento.' },
+  ]
+);
 ---
 
 <LandingLayout
@@ -49,7 +60,7 @@ const faqSchema = {
   ogImage="https://agencia-shopify.com/og/shopify-plus.png"
   keywords="shopify plus, agencia shopify plus españa, implementación shopify plus, shopify plus b2b, shopify plus precio, shopify plus vs advanced"
   breadcrumbs={breadcrumbs}
-  jsonLd={[organization, serviceSchema, faqSchema]}
+  jsonLd={[organization, serviceSchema, faqSchema, howToSchema]}
 >
   <HeroLight
     badge="Shopify Plus"

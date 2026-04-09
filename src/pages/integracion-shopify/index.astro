@@ -6,7 +6,7 @@ import ForWhomTable from '../../components/aeo/ForWhomTable.astro';
 import Methodology from '../../components/aeo/Methodology.astro';
 import FAQAccordion from '../../components/aeo/FAQAccordion.astro';
 import ContactBlock from '../../components/sections/ContactBlock.astro';
-import { organization } from '../../data/structured-data';
+import { organization, createHowToSchema } from '../../data/structured-data';
 
 const breadcrumbs = [{ label: 'Integración Shopify' }];
 
@@ -35,6 +35,17 @@ const faqSchema = {
     acceptedAnswer: { '@type': 'Answer', text: faq.answer },
   })),
 };
+
+const howToSchema = createHowToSchema(
+  'Cómo integrar Shopify con sistemas empresariales (ERP, CRM, PIM)',
+  'Proceso técnico en 4 fases para conectar Shopify con ERPs, CRMs y otros sistemas de negocio mediante APIs nativas o middleware.',
+  [
+    { title: 'Mapeo de sistemas', text: 'Identificamos todos los sistemas que necesitan comunicarse con Shopify: ERP, CRM, PIM, WMS, marketplaces, pasarelas de pago y herramientas de automatización.' },
+    { title: 'Diseño de arquitectura', text: 'Definimos los flujos de datos, la dirección de sincronización, las reglas de transformación y la estrategia de gestión de errores.' },
+    { title: 'Implementación', text: 'Desarrollamos la integración usando APIs de Shopify, middleware cuando es necesario, y conectores específicos para cada sistema.' },
+    { title: 'Testing y puesta en marcha', text: 'Validamos cada flujo de datos con escenarios reales, monitorizamos la sincronización y ajustamos las reglas hasta que la operación sea estable.' },
+  ]
+);
 ---
 
 <LandingLayout
@@ -45,7 +56,7 @@ const faqSchema = {
   ogImage="https://agencia-shopify.com/og/integracion-shopify.png"
   keywords="integración shopify, shopify erp, conectar shopify, integración ecommerce, shopify api, sincronizar shopify erp, middleware shopify"
   breadcrumbs={breadcrumbs}
-  jsonLd={[organization, serviceSchema, faqSchema]}
+  jsonLd={[organization, serviceSchema, faqSchema, howToSchema]}
 >
   <HeroLight
     badge="Integración Shopify"
